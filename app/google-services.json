@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "37147317958",
+    "firebase_url": "https://radarriders-22-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "radarriders-22",
+    "storage_bucket": "radarriders-22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37147317958:android:9f18d83d9a3269c9c5e9c7",
+        "android_client_info": {
+          "package_name": "com.gimbernat.radarriders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37147317958-lflkmh03o4qokchukrvpv9om793kgr6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnsVO0Fl-XVP5v6476oHnFgnTrnYDuxN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37147317958-lflkmh03o4qokchukrvpv9om793kgr6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
