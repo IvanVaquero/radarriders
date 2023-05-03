@@ -100,4 +100,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
 
+    //TomTom
+    def tom_version = "0.12.0"
+    implementation "com.tomtom.sdk.maps:map-display:$tom_version"
+    implementation "com.tomtom.sdk.routing:route-planner-online:$tom_version"
+    implementation "com.tomtom.sdk.location:provider-android:$tom_version"
+    implementation "com.tomtom.sdk.location:provider-simulation:$tom_version"
+    implementation "com.tomtom.sdk.location:provider-map-matched:$tom_version"
+    implementation "com.tomtom.sdk.navigation:navigation-online:$tom_version"
+    implementation "com.tomtom.sdk.navigation:ui:$tom_version"
+
 }
