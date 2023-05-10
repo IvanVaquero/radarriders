@@ -7,7 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material3.ExperimentalMaterial3Api
-// import com.gimbernat.radarriders.ui.components.*
+import com.gimbernat.radarriders.ui.components.*
 import com.google.firebase.FirebaseApp
 
 

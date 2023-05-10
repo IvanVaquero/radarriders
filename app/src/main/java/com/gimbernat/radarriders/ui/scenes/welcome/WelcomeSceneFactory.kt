@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.helpers.ComposableFactory
-import com.gimbernat.radarriders.ui.scenes.main.MainScene
-import com.gimbernat.radarriders.ui.scenes.main.MainSceneViewModel
+// import com.gimbernat.radarriders.ui.scenes.main.MainScene
+// import com.gimbernat.radarriders.ui.scenes.main.MainSceneViewModel
 
 class WelcomeSceneFactory (private val navController: NavController) :
     ComposableFactory<Any> {

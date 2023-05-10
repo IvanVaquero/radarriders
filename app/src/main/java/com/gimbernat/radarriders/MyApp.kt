@@ -26,11 +26,11 @@ import androidx.navigation.navArgument
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
-import com.gimbernat.radarriders.ui.scenes.login.*
+// import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
 // import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
-// import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
+import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -55,11 +55,13 @@ fun MyApp() {
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 
     // Determine the start destination based on whether the user is logged in or not
-    val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
+    // val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
+    val startDestination = AppRoutes.WELCOME.value
+
 
     //it uses the MyApplicationTheme to define the theme for the application.
-/*
-    MyApplicationTheme {
+
+    RadarRidersTheme {
 
         //The AnimatedNavHost is a navigation host that supports transitions between
         // different destinations. It is used to manage the app's navigation graph,
@@ -92,13 +94,13 @@ fun MyApp() {
             ) {
                 mainSceneFactory.create(null)
             }
-*/
+
             composable(
                 AppRoutes.LOGIN.value
             ) {
                 loginSceneFactory.create(null)
             }
-
+*/
 /*            composable(
                 route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",
                 arguments = listOf(navArgument("id") { type = NavType.StringType }),
@@ -121,7 +123,7 @@ fun MyApp() {
             }*/
         }
     }
-*/
+
 
 }
 
@@ -129,10 +131,10 @@ fun MyApp() {
 @Preview(showBackground = true)
 @Composable
 fun MyAppPreview() {
-/*
-    MyApplicationTheme {
+
+    RadarRidersTheme {
         MyApp()
     }
 
- */
+
 }
