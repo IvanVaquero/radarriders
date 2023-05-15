@@ -26,7 +26,7 @@ import androidx.navigation.navArgument
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
-// import com.gimbernat.radarriders.ui.scenes.login.*
+import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
 // import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
@@ -48,7 +48,7 @@ fun MyApp() {
     //WelcomeScene
     val welcomeSceneFactory = WelcomeSceneFactory(navController)
     //LoginScene
-//    val loginSceneFactory = LoginSceneFactory(navController, sessionDataSource)
+    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
 //    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource, capsulesDataSource)
     //Capsule Detail
@@ -94,13 +94,13 @@ fun MyApp() {
             ) {
                 mainSceneFactory.create(null)
             }
-
+*/
             composable(
                 AppRoutes.LOGIN.value
             ) {
                 loginSceneFactory.create(null)
             }
-*/
+
 /*            composable(
                 route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",
                 arguments = listOf(navArgument("id") { type = NavType.StringType }),

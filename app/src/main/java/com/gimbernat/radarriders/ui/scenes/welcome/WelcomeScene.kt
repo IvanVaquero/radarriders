@@ -57,12 +57,12 @@ fun WelcomeScene(viewModel: WelcomeSceneViewModel) {
 
                 Button(
                     onClick = {
-                        // viewModel.navigateToLogin()
+                        viewModel.navigateToLogin()
                     },
                     modifier = Modifier.padding(top = ThemeSize.two.value)
                 ) {
                     Text(
-                        text = "Ok",
+                        text = "Start",
                         style = MaterialTheme.typography.titleLarge
                     )
                 }
