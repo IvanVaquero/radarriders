@@ -7,3 +7,4 @@ data class Radars(
 ) {
     constructor() : this("", 0, false)
 }
+
