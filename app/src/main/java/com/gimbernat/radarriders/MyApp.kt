@@ -28,7 +28,7 @@ import com.gimbernat.radarriders.datasources.SessionDataSource
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
 import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
-// import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
+import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -50,13 +50,13 @@ fun MyApp() {
     //LoginScene
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
-//    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource, capsulesDataSource)
+    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
     //Capsule Detail
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 
     // Determine the start destination based on whether the user is logged in or not
     // val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
-    val startDestination = AppRoutes.WELCOME.value
+    val startDestination = AppRoutes.MAIN.value
 
 
     //it uses the MyApplicationTheme to define the theme for the application.
@@ -89,12 +89,12 @@ fun MyApp() {
                 welcomeSceneFactory.create(null)
             }
 
-/*            composable(
+           composable(
                 AppRoutes.MAIN.value
             ) {
                 mainSceneFactory.create(null)
             }
-*/
+
             composable(
                 AppRoutes.LOGIN.value
             ) {

@@ -7,14 +7,26 @@ import com.gimbernat.radarriders.AppRoutes
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import kotlinx.coroutines.launch
 
-class WelcomeSceneViewModel (private val navController: NavController) : ViewModel() {
-    fun navigateToLogin(){
+class WelcomeSceneViewModel(private val navController: NavController) : ViewModel() {
+        fun navigateToLogin(){
+            viewModelScope.launch {
+                navController.navigate(AppRoutes.LOGIN.value) {
+                    popUpTo(AppRoutes.WELCOME.value) {
+                        inclusive = true
+                    }
+                }
+            }
+        }
+
+/*
+    fun navigateToMain() {
         viewModelScope.launch {
-            navController.navigate(AppRoutes.LOGIN.value) {
+            navController.navigate(AppRoutes.MAIN.value) {
                 popUpTo(AppRoutes.WELCOME.value) {
                     inclusive = true
                 }
             }
         }
     }
+    */
 }

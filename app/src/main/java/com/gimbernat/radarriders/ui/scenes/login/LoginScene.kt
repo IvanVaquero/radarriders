@@ -88,9 +88,9 @@ fun LoginScene(viewModel: LoginViewModel) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            if (viewModel.errorMessage.value.isNotEmpty()) {
-                Text(text = viewModel.errorMessage.value, color = Color.Red)
-            }
+        //    if (viewModel.errorMessage.value.isNotEmpty()) {
+        //        Text(text = viewModel.errorMessage.value, color = Color.Red)
+        //    }
 
             OutlinedTextField(
                 value = emailState.value,
@@ -121,13 +121,15 @@ fun LoginScene(viewModel: LoginViewModel) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Button(
+
                     onClick = {
                         validateInputs(){ email, password ->
-                            viewModel.signUp(email, password)
+                            // viewModel.signUp(email, password)
                         }
                     },
                     modifier = Modifier.weight(1f),
-                    enabled = !viewModel.isLoading.value
+                    // enabled = !viewModel.isLoading.value
+
                 ) {
                     Text(text = "Sign Up")
                 }
@@ -136,12 +138,16 @@ fun LoginScene(viewModel: LoginViewModel) {
 
                 Button(
                     onClick = {
+                        /*
                         validateInputs(){ email, password ->
                             viewModel.login(email, password)
+
                         }
+                         */
+                        viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
-                    enabled = !viewModel.isLoading.value
+        //            enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Login")
                 }

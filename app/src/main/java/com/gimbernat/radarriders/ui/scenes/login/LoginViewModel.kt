@@ -15,7 +15,7 @@ class LoginViewModel(
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource
 ) : ViewModel() {
-
+/*
     private val _loggedIn = MutableStateFlow(false)
     val loggedIn: StateFlow<Boolean> = _loggedIn
 
@@ -62,7 +62,7 @@ class LoginViewModel(
             }
         }
     }
-
+*/
 //    private fun navigateToMain(){
 //        viewModelScope.launch {
 //        isLoading.value = false
@@ -76,4 +76,15 @@ class LoginViewModel(
 //        }
 //
 //    }
+
+    fun navigateToMain() {
+        viewModelScope.launch {
+            navController.navigate(AppRoutes.MAIN.value) {
+                popUpTo(AppRoutes.LOGIN.value) {
+                    inclusive = true
+                }
+            }
+        }
+    }
+
 }

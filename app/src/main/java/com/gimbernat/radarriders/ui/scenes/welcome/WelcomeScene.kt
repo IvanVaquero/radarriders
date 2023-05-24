@@ -57,7 +57,9 @@ fun WelcomeScene(viewModel: WelcomeSceneViewModel) {
 
                 Button(
                     onClick = {
+ //                       viewModel.navigateToMain()
                         viewModel.navigateToLogin()
+
                     },
                     modifier = Modifier.padding(top = ThemeSize.two.value)
                 ) {
