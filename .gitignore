@@ -1,6 +1,6 @@
-/build
-.gradle
 *.iml
+.gradle
+/build
 /local.properties
 /.idea/caches
 /.idea/libraries
