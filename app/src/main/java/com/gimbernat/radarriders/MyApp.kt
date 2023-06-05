@@ -25,6 +25,7 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
+import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
 // import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
@@ -46,7 +47,8 @@ fun MyApp() {
 //    val capsulesDataSource = CapsulesDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
-    val welcomeSceneFactory = WelcomeSceneFactory(navController)
+//    val welcomeSceneFactory = WelcomeSceneFactory(navController)
+    val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
     //LoginScene
 //    val loginSceneFactory = LoginSceneFactory(navController, sessionDataSource)
     //MainScene
@@ -56,7 +58,7 @@ fun MyApp() {
 
     // Determine the start destination based on whether the user is logged in or not
     // val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
-    val startDestination = AppRoutes.WELCOME.value
+    val startDestination = AppRoutes.MAP.value
 
 
     //it uses the MyApplicationTheme to define the theme for the application.
@@ -84,9 +86,9 @@ fun MyApp() {
                 .fillMaxSize()
         ) {
             composable(
-                AppRoutes.WELCOME.value
+                AppRoutes.MAP.value
             ) {
-                welcomeSceneFactory.create(null)
+                mapSceneFactory.create(null)
             }
 
 /*            composable(
