@@ -5,8 +5,9 @@ data class Users(
         var Foto: String = "",
         var Password: String = "",
         var UserName: String = "",
-        var isAdmin: Boolean = false
+        var isAdmin: Boolean = false,
+        var id: String? = null
 ){
-    constructor() : this("","","","",)
+    constructor() : this("","","","", false, null)
 }
 
