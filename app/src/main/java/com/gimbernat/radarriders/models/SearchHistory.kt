@@ -2,10 +2,9 @@ package com.gimbernat.radarriders.models
 
 
 data class SearchHistory(
-        var lat: Int = 0,
-        var lng: Int = 0,
+        var location: Location? = null,
         var user: Users? = null,
         var id: String? = null
 ){
-    constructor() : this(0,0, null, null)
+    constructor() : this(null, null, null)
 }

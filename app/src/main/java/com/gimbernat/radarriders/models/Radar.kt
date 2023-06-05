@@ -1,9 +1,9 @@
 package com.gimbernat.radarriders.models
 
-data class Radars(
+data class Radar(
     var RadarName: String = "",
-    var IniLocation: List<String> = listOf(),
-    var EndLocation: List<String> = listOf(),
+    var IniLocation: List<Location> = listOf(),
+    var EndLocation: List<Location> = listOf(),
     var Limit: Int = 0,
     var Static: Boolean = false,
     var id: String? = null,
