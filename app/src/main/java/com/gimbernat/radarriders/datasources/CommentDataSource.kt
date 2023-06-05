@@ -69,9 +69,14 @@ class CommentDataSource(private val database: FirebaseDatabase) : ICommentDataSo
     override fun createComment(comment: Comment): Boolean {
         return try {
 //          Creamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments")
-            commentsTable.setValue(comment)
-            commentsTable.push()
+            val commentsTable = database.getReference("Comments").child(uid)
+            commentsTable.setValue(alert)
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -81,9 +86,14 @@ class CommentDataSource(private val database: FirebaseDatabase) : ICommentDataSo
     override fun editComment(comment: Comment): Boolean {
         return try {
 //            Editamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments")
+            val commentsTable = database.getReference("Comments").child(uid)
             commentsTable.setValue(comment)
-            commentsTable.push()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -93,8 +103,14 @@ class CommentDataSource(private val database: FirebaseDatabase) : ICommentDataSo
     override fun deleteComment(id: String): Boolean {
         return try {
 //          Eliminamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments")
-            commentsTable.child(id).removeValue()
+            val commentsTable = database.getReference("Comments").child(id)
+            commentsTable.removeValue()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false

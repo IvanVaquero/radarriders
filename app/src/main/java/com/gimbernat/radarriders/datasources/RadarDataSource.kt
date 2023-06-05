@@ -70,9 +70,14 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
     override fun createRadar(radar: Radar): Boolean {
         return try {
 //          Creamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars")
+            val radarsTable = database.getReference("Radars").child(uid)
             radarsTable.setValue(radar)
-            radarsTable.push()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -82,9 +87,14 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
     override fun editRadar(radar: Radar): Boolean {
         return try {
 //            Editamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars")
+            val radarsTable = database.getReference("Radars").child(uid)
             radarsTable.setValue(radar)
-            radarsTable.push()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -94,8 +104,14 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
     override fun deleteRadar(id: String): Boolean {
         return try {
 //          Eliminamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars")
-            radarsTable.child(id).removeValue()
+            val radarsTable = database.getReference("Radars").child(uid)
+            radarsTable.removeValue()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false

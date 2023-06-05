@@ -1,4 +1,5 @@
 package com.gimbernat.radarriders.datasources
+import android.util.Log
 import com.gimbernat.radarriders.datasources.interfaces.IAlertDataSource
 import com.gimbernat.radarriders.models.Alert
 import com.google.firebase.database.DataSnapshot
@@ -69,9 +70,15 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
     override fun createAlert(alert: Alert): Boolean {
         return try {
 //          Creamos aqui el objeto en la base de datos
-            val alertsTable = database.getReference("Alerts")
+//           ???? Creamos tambien el ID
+            val alertsTable = database.getReference("Alerts").child(uid)
             alertsTable.setValue(alert)
-            alertsTable.push()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -81,9 +88,14 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
     override fun editAlert(alert: Alert): Boolean {
         return try {
 //            Editamos aqui el objeto en la base de datos
-            val alertsTable = database.getReference("Alerts")
+            val alertsTable = database.getReference("Alerts").child(uid)
             alertsTable.setValue(alert)
-            alertsTable.push()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
@@ -93,8 +105,14 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
     override fun deleteAlert(id: String): Boolean {
         return try {
 //          Eliminamos aqui el objeto en la base de datos
-            val alertsTable = database.getReference("Alerts")
-            alertsTable.child(id).removeValue()
+            val alertsTable = database.getReference("Alerts").child(id)
+            alertsTable.removeValue()
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
             true
         } catch (e: Exception) {
             false
