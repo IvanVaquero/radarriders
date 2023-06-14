@@ -5,14 +5,20 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,11 +69,39 @@ fun MapScene(viewModel: MapSceneViewModel) {
                             )
                         }
                     }*/
+
                 }
+
+
             )
         }
     )
     { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
+        ) {
+            Button(
+                onClick = {
+                    /*
+                    validateInputs(){ email, password ->
+                        viewModel.login(email, password)
+
+                    }
+                     */
+                    viewModel.navigateToMain()
+                },
+                modifier = Modifier.weight(1f),
+                //            enabled = !viewModel.isLoading.value
+            ) {
+                Text(text = "Editar Usuario")
+            }
+        }
        // val categories by viewModel.categories.observeAsState(emptyList())
 
         /* LazyColumn(Modifier.padding(innerPadding)) {
@@ -112,4 +146,5 @@ fun MainScenePreview() {
             sessionDataSource = SessionDataSource()
         )
     }
+
 }
