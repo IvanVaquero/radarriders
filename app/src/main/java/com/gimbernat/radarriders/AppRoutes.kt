@@ -11,6 +11,10 @@ enum class AppRoutes(val value: String) {
     EDITALERT("EditAlert"),
     REGISTRO("Registro"),
     NEWRADAR("Crear Radar"),
-    COMMENT("Comentarios")
+    COMMENT("Comentarios"),
+    NEWALERT("Crear Alerta"),
+    DELETEUSER("Eliminar Usuario"),
+    DELETERADAR("Eliminar Radar"),
+    DELETEALERT("Eliminar Alerta")
     // MAIN("Main")
 }
