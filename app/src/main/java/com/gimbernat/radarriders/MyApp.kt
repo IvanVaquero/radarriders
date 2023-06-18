@@ -47,12 +47,12 @@ fun MyApp() {
 //    val capsulesDataSource = CapsulesDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
-//    val welcomeSceneFactory = WelcomeSceneFactory(navController)
+    val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
     //LoginScene
-//    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
+    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
-//    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
+    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
     //Capsule Detail
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 
@@ -91,7 +91,7 @@ fun MyApp() {
                 mapSceneFactory.create(null)
             }
 
-/*            composable(
+            composable(
                 AppRoutes.MAIN.value
             ) {
                 mainSceneFactory.create(null)
@@ -102,7 +102,7 @@ fun MyApp() {
             ) {
                 loginSceneFactory.create(null)
             }
-*/
+
 /*            composable(
                 route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",
                 arguments = listOf(navArgument("id") { type = NavType.StringType }),
