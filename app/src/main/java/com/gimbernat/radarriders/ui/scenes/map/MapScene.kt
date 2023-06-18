@@ -175,5 +175,4 @@ fun MainScenePreview() {
             sessionDataSource = SessionDataSource()
         )
     }
-
 }
