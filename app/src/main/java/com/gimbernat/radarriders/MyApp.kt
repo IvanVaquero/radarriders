@@ -79,7 +79,7 @@ fun MyApp() {
 
     // Determine the start destination based on whether the user is logged in or not
     // val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
-    val startDestination = AppRoutes.MAP.value
+    val startDestination = AppRoutes.WELCOME.value
 
 
     //it uses the MyApplicationTheme to define the theme for the application.
@@ -106,6 +106,12 @@ fun MyApp() {
             modifier = Modifier
                 .fillMaxSize()
         ) {
+            composable(
+                AppRoutes.WELCOME.value
+            ) {
+                welcomeSceneFactory.create(null)
+            }
+
             composable(
                 AppRoutes.MAP.value
             ) {

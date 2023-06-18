@@ -89,7 +89,7 @@ fun EdituserScene(viewModel: EditUserViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "Modificar datos",
+                text = "User Profile",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -147,7 +147,7 @@ fun EdituserScene(viewModel: EditUserViewModel){
                     modifier = Modifier.weight(1f),
                     //            enabled = !viewModel.isLoading.value
                 ) {
-                    Text(text = "Volver")
+                    Text(text = "Go back")
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -163,7 +163,7 @@ fun EdituserScene(viewModel: EditUserViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Aplicar")
+                    Text(text = "Save")
                 }
             }
         }
