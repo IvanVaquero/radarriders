@@ -34,5 +34,15 @@ class MapSceneViewModel(
 //                _categories.value = it
 //            }
 //        }
+//
 //    }
+fun navigateToMain() {
+    viewModelScope.launch {
+        navController.navigate(AppRoutes.EDITUSER.value) {
+            popUpTo(AppRoutes.MAP.value) {
+                inclusive = true
+            }
+        }
+    }
+}
 }
