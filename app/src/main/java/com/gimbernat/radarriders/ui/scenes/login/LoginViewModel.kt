@@ -79,7 +79,7 @@ class LoginViewModel(
 
     fun navigateToMain() {
         viewModelScope.launch {
-            navController.navigate(AppRoutes.MAIN.value) {
+            navController.navigate(AppRoutes.MAP.value) {
                 popUpTo(AppRoutes.LOGIN.value) {
                     inclusive = true
                 }

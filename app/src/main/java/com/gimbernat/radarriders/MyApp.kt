@@ -98,12 +98,6 @@ fun MyApp() {
             }
 
             composable(
-                AppRoutes.MAIN.value
-            ) {
-                mainSceneFactory.create(null)
-            }
-
-            composable(
                 AppRoutes.LOGIN.value
             ) {
                 loginSceneFactory.create(null)
