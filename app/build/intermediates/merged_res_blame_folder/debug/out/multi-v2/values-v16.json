@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-81:/values-v16/values-v16.xml",
+            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\2e6c010e89367abb9f94c488278e6c7d\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ac8b653eeb4accb478b61e4ef0534a4b\\transformed\\appcompat-1.4.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\a00b25f46c8c04f79f9147cf559ae019\\transformed\\appcompat-1.4.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\666a7c10c197170fd4bb44f5d5211e1d\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

@@ -27,9 +27,9 @@ import androidx.navigation.navArgument
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
-// import com.gimbernat.radarriders.ui.scenes.login.*
+import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
-// import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
+import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -50,9 +50,9 @@ fun MyApp() {
 //    val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
     //LoginScene
-//    val loginSceneFactory = LoginSceneFactory(navController, sessionDataSource)
+//    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
-//    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource, capsulesDataSource)
+//    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
     //Capsule Detail
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 

@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-81:/values-v28/values-v28.xml",
+            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\30319d4e3e7c5aa6eeb721682b6f40c9\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,143,231,319,407,494,581,668",
-                        "endColumns": "87,87,87,87,86,86,86,86",
-                        "endOffsets": "138,226,314,402,489,576,663,750"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ac8b653eeb4accb478b61e4ef0534a4b\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\a00b25f46c8c04f79f9147cf559ae019\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "10,11,15,19",
                         "endColumns": "74,86,12,12",
                         "endOffsets": "825,912,1092,1284"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9f52486ed4b1e15404905fbf6f0961ed\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,143,231,319,407,494,581,668",
+                        "endColumns": "87,87,87,87,86,86,86,86",
+                        "endOffsets": "138,226,314,402,489,576,663,750"
                     }
                 }
             ]

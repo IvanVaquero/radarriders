@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-81:/values-si/values-si.xml",
+            "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-si/values-si.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ca8e79f0607ca55777e4d1ba697db71a\\transformed\\play-services-basement-18.1.0\\res\\values-si\\values.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\5e585d2f466482a6322ae65d02009dd0\\transformed\\play-services-basement-18.1.0\\res\\values-si\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\45efa5308fb086cee4959a100633d563\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\666a7c10c197170fd4bb44f5d5211e1d\\transformed\\core-1.9.0\\res\\values-si\\values-si.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "135",
+                        "startColumns": "4",
+                        "startOffsets": "12121",
+                        "endColumns": "100",
+                        "endOffsets": "12217"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ccbf0765f0219eace52ffd5ba6dee937\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\88bb64aec5b2401f86ea782fb1814ca1\\transformed\\play-services-base-18.1.0\\res\\values-si\\values.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\5795209465c21eba58e688b8ff4c12c3\\transformed\\play-services-base-18.1.0\\res\\values-si\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +72,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\040124ce8484181a09d0d9ecd695ee8a\\transformed\\navigation-ui-2.5.3\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\0b48304151e7648b5f6a7a7e4c77c20e\\transformed\\browser-1.4.0\\res\\values-si\\values-si.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,163,270,386",
+                        "endColumns": "107,106,115,104",
+                        "endOffsets": "158,265,381,486"
+                    },
+                    "to": {
+                        "startLines": "58,66,67,68",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5808,6501,6608,6724",
+                        "endColumns": "107,106,115,104",
+                        "endOffsets": "5911,6603,6719,6824"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\4942f4121f52f26f453b468d8a513cc6\\transformed\\ui-1.4.0-alpha05\\res\\values-si\\values-si.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,194,277,376,475,557,642,733,819,899,976,1051,1130,1212,1285,1366,1433",
+                        "endColumns": "88,82,98,98,81,84,90,85,79,76,74,78,81,72,80,66,117",
+                        "endOffsets": "189,272,371,470,552,637,728,814,894,971,1046,1125,1207,1280,1361,1428,1546"
+                    },
+                    "to": {
+                        "startLines": "37,38,59,60,62,70,71,123,124,125,127,130,131,134,136,137,138",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3368,3457,5916,6015,6186,6896,6981,11184,11270,11350,11492,11724,11803,12048,12222,12303,12370",
+                        "endColumns": "88,82,98,98,81,84,90,85,79,76,74,78,81,72,80,66,117",
+                        "endOffsets": "3452,3535,6010,6109,6263,6976,7067,11265,11345,11422,11562,11798,11880,12116,12298,12365,12483"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\0bddd645b6f8460b795cac6fa836f433\\transformed\\navigation-ui-2.5.3\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -72,7 +123,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\30319d4e3e7c5aa6eeb721682b6f40c9\\transformed\\material-1.4.0-beta01\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9f52486ed4b1e15404905fbf6f0961ed\\transformed\\material-1.4.0-beta01\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,41 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9de7b7fd35c60fc4d35a4a500e1d203b\\transformed\\ui-1.4.0-alpha05\\res\\values-si\\values-si.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,194,277,376,475,557,642,733,819,899,976,1051,1130,1212,1285,1366,1433",
-                        "endColumns": "88,82,98,98,81,84,90,85,79,76,74,78,81,72,80,66,117",
-                        "endOffsets": "189,272,371,470,552,637,728,814,894,971,1046,1125,1207,1280,1361,1428,1546"
-                    },
-                    "to": {
-                        "startLines": "37,38,59,60,62,70,71,123,124,125,127,130,131,134,136,137,138",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3368,3457,5916,6015,6186,6896,6981,11184,11270,11350,11492,11724,11803,12048,12222,12303,12370",
-                        "endColumns": "88,82,98,98,81,84,90,85,79,76,74,78,81,72,80,66,117",
-                        "endOffsets": "3452,3535,6010,6109,6263,6976,7067,11265,11345,11422,11562,11798,11880,12116,12298,12365,12483"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\e9f26b28f8fede6086fd5367ff06806d\\transformed\\material3-1.0.0\\res\\values-si\\values-si.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,133,205",
-                        "endColumns": "77,71,79",
-                        "endOffsets": "128,200,280"
-                    },
-                    "to": {
-                        "startLines": "39,61,64",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3540,6114,6332",
-                        "endColumns": "77,71,79",
-                        "endOffsets": "3613,6181,6407"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ac8b653eeb4accb478b61e4ef0534a4b\\transformed\\appcompat-1.4.1\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\a00b25f46c8c04f79f9147cf559ae019\\transformed\\appcompat-1.4.1\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -142,37 +159,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\641845240b6fa5ca3f4fa4334039623e\\transformed\\browser-1.4.0\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\19987724dfff3fb2b78e1a5a024930bb\\transformed\\material3-1.0.0\\res\\values-si\\values-si.xml",
                     "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,163,270,386",
-                        "endColumns": "107,106,115,104",
-                        "endOffsets": "158,265,381,486"
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,133,205",
+                        "endColumns": "77,71,79",
+                        "endOffsets": "128,200,280"
                     },
                     "to": {
-                        "startLines": "58,66,67,68",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "5808,6501,6608,6724",
-                        "endColumns": "107,106,115,104",
-                        "endOffsets": "5911,6603,6719,6824"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\2e6c010e89367abb9f94c488278e6c7d\\transformed\\core-1.9.0\\res\\values-si\\values-si.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "135",
-                        "startColumns": "4",
-                        "startOffsets": "12121",
-                        "endColumns": "100",
-                        "endOffsets": "12217"
+                        "startLines": "39,61,64",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3540,6114,6332",
+                        "endColumns": "77,71,79",
+                        "endOffsets": "3613,6181,6407"
                     }
                 }
             ]
