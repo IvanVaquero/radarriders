@@ -57,7 +57,7 @@ fun MainScene(viewModel: MainSceneViewModel) {
             TopAppBar(
                 navigationIcon = {
                     IconButton(onClick = {
-                        viewModel.signOut()
+//                        viewModel.signOut()
                     }) {
                         Icon(Icons.Filled.AccountCircle, contentDescription = null)
                     }

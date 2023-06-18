@@ -2,13 +2,12 @@ package com.gimbernat.radarriders.models
 
 data class Radar(
     var RadarName: String = "",
-    var IniLocation: List<Location> = listOf(),
-    var EndLocation: List<Location> = listOf(),
+    var latitude: Double = 0.0,
+    var longitude: Double = 0.0,
     var Limit: Int = 0,
-    var Static: Boolean = false,
     var id: String? = null,
     var user: Users? = null
 ) {
-    constructor() : this("", listOf(),listOf(),0, false, null, null)
+    constructor() : this("", 0.0,0.0,0, null, null)
 }
 

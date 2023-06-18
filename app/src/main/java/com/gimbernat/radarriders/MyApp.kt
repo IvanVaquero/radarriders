@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.gimbernat.radarriders.datasources.RadarDataSource
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
@@ -44,11 +45,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 fun MyApp() {
     val navController = rememberAnimatedNavController()
     val sessionDataSource = SessionDataSource()
-//    val capsulesDataSource = CapsulesDataSource(database = FirebaseDatabase.getInstance())
+    val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
 //    val welcomeSceneFactory = WelcomeSceneFactory(navController)
-    val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
+    val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
     //LoginScene
 //    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene

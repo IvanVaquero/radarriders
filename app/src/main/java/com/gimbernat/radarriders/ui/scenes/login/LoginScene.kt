@@ -144,7 +144,7 @@ fun LoginScene(viewModel: LoginViewModel) {
 
                         }
                          */
-                        viewModel.navigateToMain()
+//                        viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
         //            enabled = !viewModel.isLoading.value

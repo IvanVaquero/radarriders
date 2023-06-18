@@ -17,7 +17,7 @@ import kotlin.coroutines.suspendCoroutine
 class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource {
     private var radars: List<Radar> = mutableListOf<Radar>()
 
-    fun subscribe(callback: (List<Radar>) -> Unit)  {
+    fun getAll(callback: (List<Radar>) -> Unit)  {
         val ref = database.getReference("Radars")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -29,12 +29,11 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
                         fetchedRadars.add(radar)
                     }
                 }
-                //Updating local copy
                 radars = fetchedRadars
                 callback(fetchedRadars)
             }
             override fun onCancelled(error: DatabaseError) {
-                callback(emptyList()) // or callback with some default value
+                callback(emptyList())
             }
         })
     }

@@ -18,7 +18,7 @@ import kotlin.coroutines.suspendCoroutine
 class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource {
     private var alerts: List<Alert> = mutableListOf<Alert>()
 
-    fun subscribe(callback: (List<Alert>) -> Unit)  {
+    fun getAll(callback: (List<Alert>) -> Unit)  {
         val ref = database.getReference("Alerts")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -30,12 +30,11 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
                         fetchedAlerts.add(alert)
                     }
                 }
-                //Updating local copy
                 alerts = fetchedAlerts
                 callback(fetchedAlerts)
             }
             override fun onCancelled(error: DatabaseError) {
-                callback(emptyList()) // or callback with some default value
+                callback(emptyList())
             }
         })
     }
