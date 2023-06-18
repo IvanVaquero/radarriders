@@ -7,7 +7,7 @@ interface IAlertDataSource {
     suspend fun fetch(): List<Alert>
     fun getAlert(id: String): Alert?
     fun createAlert(alert: Alert): Boolean
-    fun editAlert(alert: Alert): Boolean
-    fun deleteAlert(id: String): Boolean
+    fun editAlert(uid: String, idAlert: String, alert: Alert): Boolean
+    fun deleteAlert(uid: String, idAlert: String): Boolean
 
 }

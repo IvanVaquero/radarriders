@@ -5,6 +5,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.util.UUID
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
@@ -68,25 +69,10 @@ class CommentDataSource(private val database: FirebaseDatabase) : ICommentDataSo
 
     override fun createComment(comment: Comment): Boolean {
         return try {
-//          Creamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments").child(uid)
-            commentsTable.setValue(alert)
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
-            true
-        } catch (e: Exception) {
-            false
-        }
-    }
+            val uid = UUID.randomUUID().toString()
+            val newId = UUID.randomUUID().toString()
 
-    override fun editComment(comment: Comment): Boolean {
-        return try {
-//            Editamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments").child(uid)
+            val commentsTable = database.getReference("Comments").child(uid).child(newId)
             commentsTable.setValue(comment)
                 .addOnSuccessListener {
 //                    Show Dialog confirmation
@@ -100,10 +86,25 @@ class CommentDataSource(private val database: FirebaseDatabase) : ICommentDataSo
         }
     }
 
-    override fun deleteComment(id: String): Boolean {
+    override fun editComment(uid: String, idComment: String, comment: Comment): Boolean {
         return try {
-//          Eliminamos aqui el objeto en la base de datos
-            val commentsTable = database.getReference("Comments").child(id)
+            val commentsTable = database.getReference("Comments").child(uid).child(idComment)
+            commentsTable.setValue(comment)
+                .addOnSuccessListener {
+//                    Show Dialog confirmation
+                }
+                .addOnFailureListener { error ->
+//                    Show Dialog Error
+                }
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    override fun deleteComment(uid: String, idComment: String): Boolean {
+        return try {
+            val commentsTable = database.getReference("Comments").child(uid).child(idComment)
             commentsTable.removeValue()
                 .addOnSuccessListener {
 //                    Show Dialog confirmation

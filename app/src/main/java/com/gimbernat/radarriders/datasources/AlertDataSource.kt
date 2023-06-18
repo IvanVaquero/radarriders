@@ -6,6 +6,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.util.UUID
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
@@ -69,50 +70,30 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
 
     override fun createAlert(alert: Alert): Boolean {
         return try {
-//          Creamos aqui el objeto en la base de datos
-//           ???? Creamos tambien el ID
-            val alertsTable = database.getReference("Alerts").child(uid)
+            val uid = UUID.randomUUID().toString()
+            val newId = UUID.randomUUID().toString()
+            val alertsTable = database.getReference("Alerts").child(uid).child(newId)
             alertsTable.setValue(alert)
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false
         }
     }
 
-    override fun editAlert(alert: Alert): Boolean {
+    override fun editAlert(uid: String, idAlert: String, alert: Alert): Boolean {
         return try {
-//            Editamos aqui el objeto en la base de datos
             val alertsTable = database.getReference("Alerts").child(uid)
             alertsTable.setValue(alert)
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false
         }
     }
 
-    override fun deleteAlert(id: String): Boolean {
+    override fun deleteAlert(uid: String, idAlert: String): Boolean {
         return try {
-//          Eliminamos aqui el objeto en la base de datos
-            val alertsTable = database.getReference("Alerts").child(id)
+            val alertsTable = database.getReference("Alerts").child(uid).child(idAlert)
             alertsTable.removeValue()
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false

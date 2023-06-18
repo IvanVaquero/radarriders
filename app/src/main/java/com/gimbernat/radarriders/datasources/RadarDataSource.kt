@@ -5,7 +5,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.coroutines.tasks.await
+import java.util.UUID
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
@@ -70,7 +70,9 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
     override fun createRadar(radar: Radar): Boolean {
         return try {
 //          Creamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars").child(uid)
+            val uid = UUID.randomUUID().toString()
+            val newId = UUID.randomUUID().toString()
+            val radarsTable = database.getReference("Radars").child(uid).child(newId)
             radarsTable.setValue(radar)
                 .addOnSuccessListener {
 //                    Show Dialog confirmation
@@ -84,10 +86,10 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
         }
     }
 
-    override fun editRadar(radar: Radar): Boolean {
+    override fun editRadar(uid: String, idRadar: String, radar: Radar): Boolean {
         return try {
 //            Editamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars").child(uid)
+            val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
             radarsTable.setValue(radar)
                 .addOnSuccessListener {
 //                    Show Dialog confirmation
@@ -101,10 +103,10 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
         }
     }
 
-    override fun deleteRadar(id: String): Boolean {
+    override fun deleteRadar(uid: String, idRadar: String): Boolean {
         return try {
 //          Eliminamos aqui el objeto en la base de datos
-            val radarsTable = database.getReference("Radars").child(uid)
+            val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
             radarsTable.removeValue()
                 .addOnSuccessListener {
 //                    Show Dialog confirmation

@@ -7,7 +7,7 @@ interface ICommentDataSource {
     suspend fun fetch(): List<Comment>
     fun getComment(id: String): Comment?
     fun createComment(comment: Comment): Boolean
-    fun editComment(comment: Comment): Boolean
-    fun deleteComment(id: String): Boolean
+    fun editComment(uid: String, idComment: String, comment: Comment): Boolean
+    fun deleteComment(uid: String, idComment: String): Boolean
 
 }
