@@ -56,4 +56,14 @@ fun navigateToMain() {
             }
         }
     }
+
+    fun editUser() {
+        viewModelScope.launch {
+            navController.navigate(AppRoutes.EDITUSER.value) {
+                popUpTo(AppRoutes.MAP.value) {
+                    inclusive = true
+                }
+            }
+        }
+    }
 }

@@ -16,6 +16,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -62,6 +63,24 @@ fun MapScene(viewModel: MapSceneViewModel) {
             TopAppBar(
                 title = { Text(text = stringResource(R.string.app_name)) },
                 actions = {
+                    IconButton(onClick = { viewModel.editUser() }) {
+                        Box(
+                            Modifier
+                                .size(37.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(Color.DarkGray)
+                        ) {
+                            Icon(
+                                Icons.Filled.AccountCircle,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .align(Alignment.Center)
+                                    .padding(4.dp)
+                            )
+                        }
+                    }
+
                     IconButton(onClick = { viewModel.signOut() }) {
                         Box(
                             Modifier
