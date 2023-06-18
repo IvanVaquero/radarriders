@@ -4,8 +4,9 @@ package com.gimbernat.radarriders
 //a destination in the application's navigation graph.
 enum class AppRoutes(val value: String) {
     WELCOME("Welcome"),
+    EDITUSER("EditUser"),
+    EDITRADAR("EditRadar"),
     MAP("map"),
-    EDITUSER("EditUser")
     // LOGIN("Login"),
     // MAIN("Main")
     // CAPSULE_DETAIL("CapsuleDetail")

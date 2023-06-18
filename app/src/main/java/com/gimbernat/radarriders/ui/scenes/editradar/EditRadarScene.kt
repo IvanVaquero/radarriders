@@ -1,0 +1,228 @@
+package com.gimbernat.radarriders.ui.scenes.editradar
+
+import android.annotation.SuppressLint
+import android.widget.Toast
+
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.gimbernat.radarriders.R
+import com.gimbernat.radarriders.datasources.SessionDataSource
+//import com.gimbernat.radarriders.ui.scenes.login.LoginSceneFactory
+//import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
+import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+
+fun EditRadarScene(viewModel: EditRadarViewModel){
+    val context = LocalContext.current
+    val limitState = remember { mutableStateOf(80) }//Llama el limite de velocidad.
+    val nameState = remember { mutableStateOf(TextFieldValue("RadarRL")) } //LLamar nombre radar
+    val staticState = remember { mutableStateOf(true) } //LLamar tipo de radar
+    val initlocationState = remember {mutableStateOf(Pair(678, 879))}
+    var (lat, lng) = initlocationState.value
+    val EndlocationState = remember {mutableStateOf(Pair(987, 789))}
+    var (endlat, endlng) = EndlocationState.value
+
+    fun validateInputs(callback: (limit: Int, name: String, static: Boolean, initlocation: Pair<Int, Int>, Endlocation: Pair<Int, Int>) -> Unit) {
+        val limit = limitState.value
+        val name = nameState.value.text
+        val static = staticState.value
+        val initlocation = initlocationState.value
+        val Endlocation = EndlocationState.value
+
+        if (limit > 0 && name.isNotEmpty()) {
+            callback(limit, name, static, initlocation, Endlocation)
+        } else {
+            Toast.makeText(
+                context,
+                "Please enter limit, name, type and locations ",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(R.string.app_name)) }
+            )
+        },
+    ) { innerPadding ->
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
+        ) {
+            Text(
+                text = "Editar Radar",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            //    if (viewModel.errorMessage.value.isNotEmpty()) {
+            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
+            //    }
+            OutlinedTextField(
+                value = nameState.value,
+                onValueChange = { nameState.value = it },
+                label = { Text("Name") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Text
+
+                )
+            )
+
+            OutlinedTextField(
+                value = limitState.value.toString(),
+                onValueChange = { limitState.value = it.toIntOrNull() ?: 0 },
+                label = { Text("Limit") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
+                )
+            )
+
+            Checkbox(
+                checked = staticState.value,
+                onCheckedChange = { staticState.value = it },
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            Row(
+                modifier = Modifier.padding(bottom = 16.dp)
+            ) {
+                OutlinedTextField(
+                    value = endlat.toString(),
+                    onValueChange = { endlat = it.toIntOrNull() ?: 0 },
+                    label = { Text("Latitude final") },
+                    modifier = Modifier.weight(1f),
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+
+                OutlinedTextField(
+                    value = endlng.toString(),
+                    onValueChange = { endlng = it.toIntOrNull() ?: 0 },
+                    label = { Text("Longitude inicial") },
+                    modifier = Modifier.weight(1f),
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+            }
+            Row(
+                modifier = Modifier.padding(bottom = 16.dp)
+            ) {
+                OutlinedTextField(
+                    value = lat.toString(),
+                    onValueChange = { lat = it.toIntOrNull() ?: 0 },
+                    label = { Text("Latitude inicial") },
+                    modifier = Modifier.weight(1f),
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+
+                OutlinedTextField(
+                    value = lng.toString(),
+                    onValueChange = { lng = it.toIntOrNull() ?: 0 },
+                    label = { Text("Longitude inicial") },
+                    modifier = Modifier.weight(1f),
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number
+                    )
+                )
+            }
+            Row(horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Button(
+
+                    onClick = {
+                        validateInputs { limit, name, static, initlocation, endlocation ->
+                            // viewModel.signUp(email, password)
+                        }
+                    },
+                    modifier = Modifier.weight(1f),
+                    // enabled = !viewModel.isLoading.value
+
+                ) {
+                    Text(text = "Sign Up")
+                }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Button(
+                    onClick = {
+                        /*
+                        validateInputs(){ email, password ->
+                            viewModel.login(email, password)
+
+                        }
+                         */
+                        viewModel.navigateToMain()
+                    },
+                    modifier = Modifier.weight(1f),
+                    //            enabled = !viewModel.isLoading.value
+                ) {
+                    Text(text = "Mapa")
+                }
+            }
+        }
+    }
+}
+@OptIn(ExperimentalAnimationApi::class)
+@Preview(showBackground = true)
+@Composable
+fun EditRadarScenePreview() {
+    RadarRidersTheme() {
+        EditRadarSceneFactory(
+            navController = rememberAnimatedNavController(),
+            sessionDataSource = SessionDataSource()
+        )
+    }
+}
+
