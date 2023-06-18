@@ -7,6 +7,7 @@ enum class AppRoutes(val value: String) {
     EDITUSER("EditUser"),
     EDITRADAR("EditRadar"),
     EDITALERT("EditAlert"),
+    REGISTRO("Registro"),
     MAP("map"),
     // LOGIN("Login"),
     // MAIN("Main")
