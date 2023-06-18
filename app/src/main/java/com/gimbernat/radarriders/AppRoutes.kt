@@ -6,6 +6,6 @@ enum class AppRoutes(val value: String) {
     WELCOME("Welcome"),
     LOGIN("Login"),
     MAP("map"),
-    EDITUSER("EditUser"),
+    EDITUSER("edituser"),
     MAIN("Main")
 }
