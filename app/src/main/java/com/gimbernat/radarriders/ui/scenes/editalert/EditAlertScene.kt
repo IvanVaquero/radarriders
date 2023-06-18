@@ -1,4 +1,4 @@
-package com.gimbernat.radarriders.ui.scenes.editradar
+package com.gimbernat.radarriders.ui.scenes.editalert
 
 import android.annotation.SuppressLint
 import android.widget.Toast
@@ -16,7 +16,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -36,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gimbernat.radarriders.R
 import com.gimbernat.radarriders.datasources.SessionDataSource
+import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarViewModel
 
 //import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
@@ -45,29 +45,19 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun EditRadarScene(viewModel: EditRadarViewModel){
+fun EditAlertScene(viewModel: EditAlertViewModel){
     val context = LocalContext.current
-    val limitState = remember { mutableStateOf(80) }//Llama el limite de velocidad.
-    val nameState = remember { mutableStateOf(TextFieldValue("RadarRL")) } //LLamar nombre radar
-    val staticState = remember { mutableStateOf(true) } //LLamar tipo de radar
-    val initlocationState = remember {mutableStateOf(Pair(678, 879))}
-    var (lat, lng) = initlocationState.value
-    val EndlocationState = remember {mutableStateOf(Pair(987, 789))}
-    var (endlat, endlng) = EndlocationState.value
-
-    fun validateInputs(callback: (limit: Int, name: String, static: Boolean, initlocation: Pair<Int, Int>, Endlocation: Pair<Int, Int>) -> Unit) {
-        val limit = limitState.value
-        val name = nameState.value.text
-        val static = staticState.value
-        val initlocation = initlocationState.value
-        val Endlocation = EndlocationState.value
-
-        if (limit > 0 && name.isNotEmpty()) {
-            callback(limit, name, static, initlocation, Endlocation)
+    val titleState = remember { mutableStateOf(TextFieldValue("Accidente")) }//Llama el titulo de alerta.
+    val descState = remember { mutableStateOf(TextFieldValue("Accidente Ronda")) } //LLamar la descripción
+    fun validateInputs(callback: (title: String, desc: String) -> Unit) {
+        val title = titleState.value.text
+        val desc = descState.value.text
+        if (title.isNotEmpty() && desc.isNotEmpty()) {
+            callback(title, desc)
         } else {
             Toast.makeText(
                 context,
-                "Please enter limit, name, type and locations ",
+                "Introduzca titulo y descripción de la alerta",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -90,7 +80,7 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "Editar Radar",
+                text = "Modificar datos",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -100,9 +90,9 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
             //        Text(text = viewModel.errorMessage.value, color = Color.Red)
             //    }
             OutlinedTextField(
-                value = nameState.value,
-                onValueChange = { nameState.value = it },
-                label = { Text("Name") },
+                value = titleState.value,
+                onValueChange = { titleState.value = it },
+                label = { Text("Titulo") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
@@ -113,76 +103,23 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
             )
 
             OutlinedTextField(
-                value = limitState.value.toString(),
-                onValueChange = { limitState.value = it.toIntOrNull() ?: 0 },
-                label = { Text("Limit") },
+                value = descState.value,
+                onValueChange = { descState.value = it },
+                label = { Text("Descripción") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
                 keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Number
+                    keyboardType = KeyboardType.Text
                 )
             )
-
-            Checkbox(
-                checked = staticState.value,
-                onCheckedChange = { staticState.value = it },
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
-
-            Row(
-                modifier = Modifier.padding(bottom = 16.dp)
-            ) {
-                OutlinedTextField(
-                    value = endlat.toString(),
-                    onValueChange = { endlat = it.toIntOrNull() ?: 0 },
-                    label = { Text("Latitude final") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-
-                OutlinedTextField(
-                    value = endlng.toString(),
-                    onValueChange = { endlng = it.toIntOrNull() ?: 0 },
-                    label = { Text("Longitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-            }
-            Row(
-                modifier = Modifier.padding(bottom = 16.dp)
-            ) {
-                OutlinedTextField(
-                    value = lat.toString(),
-                    onValueChange = { lat = it.toIntOrNull() ?: 0 },
-                    label = { Text("Latitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-
-                OutlinedTextField(
-                    value = lng.toString(),
-                    onValueChange = { lng = it.toIntOrNull() ?: 0 },
-                    label = { Text("Longitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-            }
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Button(
 
                     onClick = {
-                        validateInputs { limit, name, static, initlocation, endlocation ->
+                        validateInputs(){title, desc ->
                             // viewModel.signUp(email, password)
                         }
                     },
@@ -190,7 +127,7 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Añadir cambios")
+                    Text(text = "Guardar cambios")
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -217,12 +154,11 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
 @OptIn(ExperimentalAnimationApi::class)
 @Preview(showBackground = true)
 @Composable
-fun EditRadarScenePreview() {
+fun EditAlertScenePreview() {
     RadarRidersTheme() {
-        EditRadarSceneFactory(
+        EditAlertSceneFactory(
             navController = rememberAnimatedNavController(),
             sessionDataSource = SessionDataSource()
         )
     }
 }
-
