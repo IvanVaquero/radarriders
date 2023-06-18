@@ -49,25 +49,21 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
     val context = LocalContext.current
     val limitState = remember { mutableStateOf(80) }//Llama el limite de velocidad.
     val nameState = remember { mutableStateOf(TextFieldValue("RadarRL")) } //LLamar nombre radar
-    val staticState = remember { mutableStateOf(true) } //LLamar tipo de radar
-    val initlocationState = remember {mutableStateOf(Pair(678, 879))}
-    var (lat, lng) = initlocationState.value
-    val EndlocationState = remember {mutableStateOf(Pair(987, 789))}
-    var (endlat, endlng) = EndlocationState.value
+    val latitudeState = remember { mutableStateOf(1234) }
+    val longitudeState = remember { mutableStateOf(4321) }
 
-    fun validateInputs(callback: (limit: Int, name: String, static: Boolean, initlocation: Pair<Int, Int>, Endlocation: Pair<Int, Int>) -> Unit) {
+    fun validateInputs(callback: (limit: Int, name: String,latitude: Int, longitude: Int) -> Unit) {
         val limit = limitState.value
         val name = nameState.value.text
-        val static = staticState.value
-        val initlocation = initlocationState.value
-        val Endlocation = EndlocationState.value
+        val latitude = latitudeState.value
+        val longitude = longitudeState.value
 
         if (limit > 0 && name.isNotEmpty()) {
-            callback(limit, name, static, initlocation, Endlocation)
+            callback(limit, name, latitude, longitude)
         } else {
             Toast.makeText(
                 context,
-                "Please enter limit, name, type and locations ",
+                "Please enter limit, name and locations ",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -124,65 +120,35 @@ fun EditRadarScene(viewModel: EditRadarViewModel){
                 )
             )
 
-            Checkbox(
-                checked = staticState.value,
-                onCheckedChange = { staticState.value = it },
-                modifier = Modifier.padding(bottom = 16.dp)
+            OutlinedTextField(
+                value = latitudeState.value.toString(),
+                onValueChange = { latitudeState.value = it.toIntOrNull() ?: 0 },
+                label = { Text("Latitud") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
+                )
             )
-
-            Row(
-                modifier = Modifier.padding(bottom = 16.dp)
-            ) {
-                OutlinedTextField(
-                    value = endlat.toString(),
-                    onValueChange = { endlat = it.toIntOrNull() ?: 0 },
-                    label = { Text("Latitude final") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
+            OutlinedTextField(
+                value = longitudeState.value.toString(),
+                onValueChange = { longitudeState.value = it.toIntOrNull() ?: 0 },
+                label = { Text("Longitud") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
                 )
-
-                OutlinedTextField(
-                    value = endlng.toString(),
-                    onValueChange = { endlng = it.toIntOrNull() ?: 0 },
-                    label = { Text("Longitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-            }
-            Row(
-                modifier = Modifier.padding(bottom = 16.dp)
-            ) {
-                OutlinedTextField(
-                    value = lat.toString(),
-                    onValueChange = { lat = it.toIntOrNull() ?: 0 },
-                    label = { Text("Latitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-
-                OutlinedTextField(
-                    value = lng.toString(),
-                    onValueChange = { lng = it.toIntOrNull() ?: 0 },
-                    label = { Text("Longitude inicial") },
-                    modifier = Modifier.weight(1f),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    )
-                )
-            }
+            )
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Button(
 
                     onClick = {
-                        validateInputs { limit, name, static, initlocation, endlocation ->
+                        validateInputs { limit, name, latitude, longitude ->
                             // viewModel.signUp(email, password)
                         }
                     },
