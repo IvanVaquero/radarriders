@@ -139,6 +139,19 @@ fun EdituserScene(viewModel: EditUserViewModel){
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
+
+                Button(
+                    onClick = {
+                        viewModel.navigateToMain()
+                    },
+                    modifier = Modifier.weight(1f),
+                    //            enabled = !viewModel.isLoading.value
+                ) {
+                    Text(text = "Volver")
+                }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
                 Button(
 
                     onClick = {
@@ -150,25 +163,7 @@ fun EdituserScene(viewModel: EditUserViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Sign Up")
-                }
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Button(
-                    onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
-                        viewModel.navigateToMain()
-                    },
-                    modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
-                ) {
-                    Text(text = "Mapa")
+                    Text(text = "Aplicar")
                 }
             }
         }

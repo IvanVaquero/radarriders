@@ -272,4 +272,15 @@ class MapSceneViewModel(
     fun back() {
         navController.popBackStack()
     }
+
+    fun signOut() {
+        viewModelScope.launch {
+            sessionDataSource.signOutUser()
+            navController.navigate(AppRoutes.WELCOME.value) {
+                popUpTo(AppRoutes.MAP.value) {
+                    inclusive = true
+                }
+            }
+        }
+    }
 }

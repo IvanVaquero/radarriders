@@ -26,11 +26,18 @@ import androidx.navigation.navArgument
 import com.gimbernat.radarriders.datasources.RadarDataSource
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
+import com.gimbernat.radarriders.ui.scenes.comments.CommentSceneFactory
+import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertSceneFactory
+import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarSceneFactory
+import com.gimbernat.radarriders.ui.scenes.edituser.EditUserSceneFactory
+import com.gimbernat.radarriders.ui.scenes.edituser.EdituserScene
 import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
 // import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
 import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
 import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
+import com.gimbernat.radarriders.ui.scenes.newradar.CrearRadarSceneFactory
+import com.gimbernat.radarriders.ui.scenes.registro.RegistroSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -48,12 +55,31 @@ fun MyApp() {
     val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
+<<<<<<< HEAD
 //    val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
+=======
+    val welcomeSceneFactory = WelcomeSceneFactory(navController)
+    val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
     //LoginScene
-//    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
+    val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
-//    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
+    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
+    //Edit User
+    val edituserSceneFactory = EditUserSceneFactory(navController, sessionDataSource)
+    //Edit Radar
+    val editRadarSceneFactory = EditRadarSceneFactory(navController, sessionDataSource)
+    //Edit Alerts
+    val editAlertSceneFactory = EditAlertSceneFactory(navController, sessionDataSource)
+    //Registro
+    val registroSceneFactory = RegistroSceneFactory(navController, sessionDataSource)
+    //Add Radar
+    val crearRadarSceneFactory = CrearRadarSceneFactory(navController, sessionDataSource)
+    //Comments
+    val commentSceneFactory = CommentSceneFactory(navController, sessionDataSource)
+
+
     //Capsule Detail
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 
@@ -92,18 +118,48 @@ fun MyApp() {
                 mapSceneFactory.create(null)
             }
 
-/*            composable(
-                AppRoutes.MAIN.value
-            ) {
-                mainSceneFactory.create(null)
-            }
-
             composable(
                 AppRoutes.LOGIN.value
             ) {
                 loginSceneFactory.create(null)
             }
-*/
+
+            composable(
+                AppRoutes.EDITUSER.value
+            ) {
+                edituserSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.EDITRADAR.value
+            ) {
+                editRadarSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.EDITALERT.value
+            ) {
+                editAlertSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.REGISTRO.value
+            ) {
+                registroSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.NEWRADAR.value
+            ) {
+                crearRadarSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.COMMENT.value
+            ) {
+                commentSceneFactory.create(null)
+            }
+
 /*            composable(
                 route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",
                 arguments = listOf(navArgument("id") { type = NavType.StringType }),

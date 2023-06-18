@@ -6,10 +6,11 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->C:\Users\poivo\Documents\Uni\Proyecto Movil\radarriders\app\src\main\AndroidManifest.xml
+8-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->C:\Users\poivo\Documents\Uni\Proyecto Movil\radarriders\app\src\main\AndroidManifest.xml
+9-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml
 10
+<<<<<<< HEAD
 11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 11-->C:\Users\poivo\Documents\Uni\Proyecto Movil\radarriders\app\src\main\AndroidManifest.xml:5:5-81
 11-->C:\Users\poivo\Documents\Uni\Proyecto Movil\radarriders\app\src\main\AndroidManifest.xml:5:22-78
@@ -466,3 +467,458 @@
 256    </application>
 257
 258</manifest>
+=======
+11    <!-- Include required permissions for Google Maps API to run. -->
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:5-79
+12-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:22-76
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
+13-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:22-64
+14
+15    <uses-feature
+15-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
+16        android:glEsVersion="0x00020000"
+16-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
+17        android:required="true" />
+17-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
+18
+19    <queries>
+19-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:30:5-34:15
+20
+21        <!-- Needs to be explicitly declared on Android R+ -->
+22        <package android:name="com.google.android.apps.maps" />
+22-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
+22-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
+23    </queries>
+24
+25    <uses-permission android:name="android.permission.WAKE_LOCK" />
+25-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:24:5-68
+25-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:24:22-65
+26    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+26-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:25:5-79
+26-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:25:22-76
+27    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+27-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:26:5-110
+27-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:26:22-107
+28
+29    <permission
+29-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+30        android:name="com.gimbernat.radarriders.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+30-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+31        android:protectionLevel="signature" />
+31-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+32
+33    <uses-permission android:name="com.gimbernat.radarriders.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Permission will be merged into the manifest of the hosting app. -->
+33-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+33-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+34    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+35-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:13:5-77
+35-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:13:22-74
+36
+37    <application
+37-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:5:5-45:19
+38        android:allowBackup="true"
+38-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:6:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.9.0] C:\Users\Kino\.gradle\caches\transforms-3\a62ed4d6cb93e7ae98415dd07786b251\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+40        android:dataExtractionRules="@xml/data_extraction_rules"
+40-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:7:9-65
+41        android:debuggable="true"
+42        android:extractNativeLibs="false"
+43        android:fullBackupContent="@xml/backup_rules"
+43-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:8:9-54
+44        android:icon="@mipmap/ic_launcher"
+44-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:9:9-43
+45        android:label="@string/app_name"
+45-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:10:9-41
+46        android:supportsRtl="true"
+46-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:11:9-35
+47        android:testOnly="true"
+48        android:theme="@style/Theme.RadarRiders" >
+48-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:12:9-49
+49
+50        <!--
+51             TODO: Before you run your application, you need a Google Maps API key.
+52
+53             To get one, follow the directions here:
+54
+55                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+56
+57             Once you have your API key (it starts with "AIza"), define a new property in your
+58             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+59             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+60        -->
+61        <meta-data
+61-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:26:9-28:71
+62            android:name="com.google.android.geo.API_KEY"
+62-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:27:13-58
+63            android:value="AIzaSyC29ZcykLe1fYM7RFXtlUW3TAQy8NVwMAg" />
+63-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:28:13-68
+64
+65        <activity
+65-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:30:9-33:59
+66            android:name="com.gimbernat.radarriders.MapsActivity"
+66-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:31:13-41
+67            android:exported="false"
+67-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:32:13-37
+68            android:label="@string/title_activity_maps" />
+68-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:33:13-56
+69        <activity
+69-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:34:9-44:20
+70            android:name="com.gimbernat.radarriders.MainActivity"
+70-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:35:13-41
+71            android:exported="true"
+71-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:36:13-36
+72            android:label="@string/app_name"
+72-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:37:13-45
+73            android:theme="@style/Theme.RadarRiders" >
+73-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:38:13-53
+74            <intent-filter>
+74-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:39:13-43:29
+75                <action android:name="android.intent.action.MAIN" />
+75-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:40:17-69
+75-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:40:25-66
+76
+77                <category android:name="android.intent.category.LAUNCHER" />
+77-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:42:17-77
+77-->C:\Users\Kino\Documents\Gimbergit\_clean_git\radarriders\app\src\main\AndroidManifest.xml:42:27-74
+78            </intent-filter>
+79        </activity>
+80
+81        <service
+81-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:11:9-17:19
+82            android:name="com.google.firebase.components.ComponentDiscoveryService"
+82-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:12:13-84
+83            android:directBootAware="true"
+83-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:34:13-43
+84            android:exported="false" >
+84-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:13:13-37
+85            <meta-data
+85-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:14:13-16:85
+86                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
+86-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:15:17-126
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-firestore-ktx:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\28344925350fc3095e073e91e434ffab\transformed\firebase-firestore-ktx-24.4.4\AndroidManifest.xml:16:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\84f2106d5f2e635fed595aae1c8a8cfb\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:14:13-16:85
+89                android:name="com.google.firebase.components:com.google.firebase.database.ktx.FirebaseDatabaseKtxRegistrar"
+89-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\84f2106d5f2e635fed595aae1c8a8cfb\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:15:17-124
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-database-ktx:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\84f2106d5f2e635fed595aae1c8a8cfb\transformed\firebase-database-ktx-20.1.0\AndroidManifest.xml:16:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\084eece6d1e11761715f722048a8f293\transformed\firebase-analytics-ktx-21.2.0\AndroidManifest.xml:11:13-13:85
+92                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+92-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\084eece6d1e11761715f722048a8f293\transformed\firebase-analytics-ktx-21.2.0\AndroidManifest.xml:12:17-126
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\084eece6d1e11761715f722048a8f293\transformed\firebase-analytics-ktx-21.2.0\AndroidManifest.xml:13:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\c7f09e6a23edc7db3724bfca77e882bf\transformed\firebase-auth-ktx-21.1.0\AndroidManifest.xml:11:13-13:85
+95                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+95-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\c7f09e6a23edc7db3724bfca77e882bf\transformed\firebase-auth-ktx-21.1.0\AndroidManifest.xml:12:17-116
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\c7f09e6a23edc7db3724bfca77e882bf\transformed\firebase-auth-ktx-21.1.0\AndroidManifest.xml:13:17-82
+97            <meta-data
+97-->[com.google.firebase:firebase-common-ktx:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\ce11977afa4f697026f7a18afc30782b\transformed\firebase-common-ktx-20.3.1\AndroidManifest.xml:14:13-16:85
+98                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+98-->[com.google.firebase:firebase-common-ktx:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\ce11977afa4f697026f7a18afc30782b\transformed\firebase-common-ktx-20.3.1\AndroidManifest.xml:15:17-113
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.firebase:firebase-common-ktx:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\ce11977afa4f697026f7a18afc30782b\transformed\firebase-common-ktx-20.3.1\AndroidManifest.xml:16:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-firestore:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\2a0407fdcd9aa9822e483fd925fffa86\transformed\firebase-firestore-24.4.4\AndroidManifest.xml:19:13-21:85
+101                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+101-->[com.google.firebase:firebase-firestore:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\2a0407fdcd9aa9822e483fd925fffa86\transformed\firebase-firestore-24.4.4\AndroidManifest.xml:20:17-111
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-firestore:24.4.4] C:\Users\Kino\.gradle\caches\transforms-3\2a0407fdcd9aa9822e483fd925fffa86\transformed\firebase-firestore-24.4.4\AndroidManifest.xml:21:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
+104                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+104-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:68:17-109
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\1f7d49db36cfe968b0ccf710012c8e82\transformed\firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
+107                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+107-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\1f7d49db36cfe968b0ccf710012c8e82\transformed\firebase-database-20.1.0\AndroidManifest.xml:32:17-109
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-database:20.1.0] C:\Users\Kino\.gradle\caches\transforms-3\1f7d49db36cfe968b0ccf710012c8e82\transformed\firebase-database-20.1.0\AndroidManifest.xml:33:17-82
+109            <meta-data
+109-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:31:13-33:85
+110                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+110-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:32:17-139
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\d4522ece3add197e1a533da6801c3208\transformed\play-services-measurement-api-21.2.0\AndroidManifest.xml:33:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Kino\.gradle\caches\transforms-3\fd63539b3d8b61b41aee0093d6267c6b\transformed\firebase-installations-17.1.3\AndroidManifest.xml:17:13-19:85
+113                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+113-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Kino\.gradle\caches\transforms-3\fd63539b3d8b61b41aee0093d6267c6b\transformed\firebase-installations-17.1.3\AndroidManifest.xml:18:17-127
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Kino\.gradle\caches\transforms-3\fd63539b3d8b61b41aee0093d6267c6b\transformed\firebase-installations-17.1.3\AndroidManifest.xml:19:17-82
+115        </service>
+116
+117        <activity
+117-->[androidx.compose.ui:ui-tooling:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\16a252bec23adc21d0eeaca8e24bb804\transformed\ui-tooling-1.3.0\AndroidManifest.xml:23:9-25:39
+118            android:name="androidx.compose.ui.tooling.PreviewActivity"
+118-->[androidx.compose.ui:ui-tooling:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\16a252bec23adc21d0eeaca8e24bb804\transformed\ui-tooling-1.3.0\AndroidManifest.xml:24:13-71
+119            android:exported="true" />
+119-->[androidx.compose.ui:ui-tooling:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\16a252bec23adc21d0eeaca8e24bb804\transformed\ui-tooling-1.3.0\AndroidManifest.xml:25:13-36
+120        <activity
+120-->[androidx.compose.ui:ui-test-manifest:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\257befd53b2e2479ba0a797ddf98d29a\transformed\ui-test-manifest-1.3.0\AndroidManifest.xml:23:9-25:39
+121            android:name="androidx.activity.ComponentActivity"
+121-->[androidx.compose.ui:ui-test-manifest:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\257befd53b2e2479ba0a797ddf98d29a\transformed\ui-test-manifest-1.3.0\AndroidManifest.xml:24:13-63
+122            android:exported="true" /> <!-- Needs to be explicitly declared on P+ -->
+122-->[androidx.compose.ui:ui-test-manifest:1.3.0] C:\Users\Kino\.gradle\caches\transforms-3\257befd53b2e2479ba0a797ddf98d29a\transformed\ui-test-manifest-1.3.0\AndroidManifest.xml:25:13-36
+123        <uses-library
+123-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+124            android:name="org.apache.http.legacy"
+124-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
+125            android:required="false" />
+125-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Kino\.gradle\caches\transforms-3\671a72c629ac6d607741d47cc5fbd57e\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+126
+127        <activity
+127-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:27:9-44:20
+128            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+128-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
+129            android:excludeFromRecents="true"
+129-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:29:13-46
+130            android:exported="true"
+130-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:30:13-36
+131            android:launchMode="singleTask"
+131-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:31:13-44
+132            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+132-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:32:13-72
+133            <intent-filter>
+133-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
+134                <action android:name="android.intent.action.VIEW" />
+134-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+134-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+135
+136                <category android:name="android.intent.category.DEFAULT" />
+136-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+136-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+137                <category android:name="android.intent.category.BROWSABLE" />
+137-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+137-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+138
+139                <data
+139-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+140                    android:host="firebase.auth"
+140-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+141                    android:path="/"
+141-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+142                    android:scheme="genericidp" />
+142-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+143            </intent-filter>
+144        </activity>
+145        <activity
+145-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
+146            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+146-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:46:13-79
+147            android:excludeFromRecents="true"
+147-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:47:13-46
+148            android:exported="true"
+148-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:48:13-36
+149            android:launchMode="singleTask"
+149-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:49:13-44
+150            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+150-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:50:13-72
+151            <intent-filter>
+151-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:51:13-61:29
+152                <action android:name="android.intent.action.VIEW" />
+152-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+152-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+153
+154                <category android:name="android.intent.category.DEFAULT" />
+154-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+154-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+155                <category android:name="android.intent.category.BROWSABLE" />
+155-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+155-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+156
+157                <data
+157-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+158                    android:host="firebase.auth"
+158-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+159                    android:path="/"
+159-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+160                    android:scheme="recaptcha" />
+160-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\Kino\.gradle\caches\transforms-3\d8d9ee37018c8072475db7f971f04617\transformed\firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+161            </intent-filter>
+162        </activity>
+163
+164        <provider
+164-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:25:9-30:39
+165            android:name="com.google.firebase.provider.FirebaseInitProvider"
+165-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:26:13-77
+166            android:authorities="com.gimbernat.radarriders.firebaseinitprovider"
+166-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:27:13-72
+167            android:directBootAware="true"
+167-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:28:13-43
+168            android:exported="false"
+168-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:29:13-37
+169            android:initOrder="100" />
+169-->[com.google.firebase:firebase-common:20.3.1] C:\Users\Kino\.gradle\caches\transforms-3\791fc426642892a468c5f5f75ddd9896\transformed\firebase-common-20.3.1\AndroidManifest.xml:30:13-36
+170
+171        <activity
+171-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\6e723818f64c6359afb5c0c97f8ca0e7\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+172            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+172-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\6e723818f64c6359afb5c0c97f8ca0e7\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+173            android:exported="false"
+173-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\6e723818f64c6359afb5c0c97f8ca0e7\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+174            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+174-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\6e723818f64c6359afb5c0c97f8ca0e7\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+175
+176        <receiver
+176-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:29:9-33:20
+177            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+177-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:30:13-85
+178            android:enabled="true"
+178-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:31:13-35
+179            android:exported="false" >
+179-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:32:13-37
+180        </receiver>
+181
+182        <service
+182-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:35:9-38:40
+183            android:name="com.google.android.gms.measurement.AppMeasurementService"
+183-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:36:13-84
+184            android:enabled="true"
+184-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:37:13-35
+185            android:exported="false" />
+185-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:38:13-37
+186        <service
+186-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:39:9-43:72
+187            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+187-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:40:13-87
+188            android:enabled="true"
+188-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:41:13-35
+189            android:exported="false"
+189-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:42:13-37
+190            android:permission="android.permission.BIND_JOB_SERVICE" />
+190-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\Kino\.gradle\caches\transforms-3\cd2ea5b265c955cf273f363d091092d7\transformed\play-services-measurement-21.2.0\AndroidManifest.xml:43:13-69
+191
+192        <meta-data
+192-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\a5f3b5fd204735fda0ce14afbf348622\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+193            android:name="com.google.android.gms.version"
+193-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\a5f3b5fd204735fda0ce14afbf348622\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+194            android:value="@integer/google_play_services_version" />
+194-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Kino\.gradle\caches\transforms-3\a5f3b5fd204735fda0ce14afbf348622\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+195
+196        <provider
+196-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:24:9-32:20
+197            android:name="androidx.startup.InitializationProvider"
+197-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:25:13-67
+198            android:authorities="com.gimbernat.radarriders.androidx-startup"
+198-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:26:13-68
+199            android:exported="false" >
+199-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:27:13-37
+200            <meta-data
+200-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:29:13-31:52
+201                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+201-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:30:17-75
+202                android:value="androidx.startup" />
+202-->[androidx.emoji2:emoji2:1.3.0-beta01] C:\Users\Kino\.gradle\caches\transforms-3\d08585761d5373f4cf843ed01dd943e4\transformed\emoji2-1.3.0-beta01\AndroidManifest.xml:31:17-49
+203            <meta-data
+203-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Kino\.gradle\caches\transforms-3\4fcbcf62bb39aee0bad6efe4f3a47f14\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+204                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+204-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Kino\.gradle\caches\transforms-3\4fcbcf62bb39aee0bad6efe4f3a47f14\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+205                android:value="androidx.startup" />
+205-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Kino\.gradle\caches\transforms-3\4fcbcf62bb39aee0bad6efe4f3a47f14\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+206            <meta-data
+206-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:30:13-32:52
+207                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+207-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:31:17-85
+208                android:value="androidx.startup" />
+208-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:32:17-49
+209        </provider>
+210
+211        <uses-library
+211-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+212            android:name="androidx.window.extensions"
+212-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+213            android:required="false" />
+213-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+214        <uses-library
+214-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+215            android:name="androidx.window.sidecar"
+215-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+216            android:required="false" />
+216-->[androidx.window:window:1.0.0] C:\Users\Kino\.gradle\caches\transforms-3\18c87c0f4b06cb42da75b1b2fa81b958\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+217
+218        <receiver
+218-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:35:9-47:20
+219            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+219-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:36:13-76
+220            android:directBootAware="false"
+220-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:37:13-44
+221            android:enabled="true"
+221-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:38:13-35
+222            android:exported="true"
+222-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:39:13-36
+223            android:permission="android.permission.DUMP" >
+223-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:40:13-57
+224            <intent-filter>
+224-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:41:13-43:29
+225                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+225-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:42:17-91
+225-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:42:25-88
+226            </intent-filter>
+227            <intent-filter>
+227-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:44:13-46:29
+228                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+228-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:45:17-85
+228-->[androidx.profileinstaller:profileinstaller:1.2.1] C:\Users\Kino\.gradle\caches\transforms-3\fdb20b3fd7b77dfc76d0053ae2d6ced5\transformed\profileinstaller-1.2.1\AndroidManifest.xml:45:25-82
+229            </intent-filter>
+230        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+231        <activity
+231-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:18:9-24:45
+232            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+232-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:19:13-100
+233            android:enabled="false"
+233-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:20:13-36
+234            android:exported="false"
+234-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:21:13-37
+235            android:launchMode="singleInstance"
+235-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:22:13-48
+236            android:process=":playcore_missing_splits_activity"
+236-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:23:13-64
+237            android:stateNotNeeded="true" />
+237-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:24:13-42
+238        <activity
+238-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:25:9-29:65
+239            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+239-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:26:13-93
+240            android:exported="false"
+240-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:27:13-37
+241            android:stateNotNeeded="true"
+241-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:28:13-42
+242            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
+242-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:29:13-62
+243        <service
+243-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:32:9-39:19
+244            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+244-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:33:13-94
+245            android:enabled="false"
+245-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:34:13-36
+246            android:exported="true" >
+246-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:35:13-36
+247            <meta-data
+247-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:36:13-38:41
+248                android:name="com.google.android.play.core.assetpacks.versionCode"
+248-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:37:17-83
+249                android:value="11003" />
+249-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:38:17-38
+250        </service>
+251        <service
+251-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:40:9-43:40
+252            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+252-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:41:13-95
+253            android:enabled="false"
+253-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:42:13-36
+254            android:exported="false" />
+254-->[com.google.android.play:core:1.10.3] C:\Users\Kino\.gradle\caches\transforms-3\84c2ca6fe05c46874fb7a085ee3c1745\transformed\core-1.10.3\AndroidManifest.xml:43:13-37
+255    </application>
+256
+257</manifest>
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc

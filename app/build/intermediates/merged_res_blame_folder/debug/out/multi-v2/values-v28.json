@@ -4,7 +4,11 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-v28/values-v28.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -23,7 +27,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -4,7 +4,11 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-v18/values-v18.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-v18\\values-v18.xml",
+=======
+                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-v18\\values-v18.xml",
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

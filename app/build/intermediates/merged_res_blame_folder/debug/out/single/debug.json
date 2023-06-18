@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-merged_res-82:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-main-84:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -38,12 +39,61 @@
     {
         "merged": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-merged_res-82:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-main-84:\\xml\\data_extraction_rules.xml"
+=======
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-hdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-mdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xhdpi/ic_launcher_foreground.png"
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
     },
     {
         "merged": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-merged_res-82:\\layout_custom_info_window.xml.flat",
         "source": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-main-84:\\layout\\custom_info_window.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-merged_res-82:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-main-84:\\xml\\backup_rules.xml"
     },
@@ -74,5 +124,81 @@
     {
         "merged": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-merged_res-82:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\poivo\\.gradle\\daemon\\8.0\\com.gimbernat.radarriders.app-main-84:\\mipmap-xxhdpi\\ic_launcher.webp"
+=======
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-xhdpi/ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/xml_data_extraction_rules.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/xml_backup_rules.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.gimbernat.radarriders.app-merged_res-82:/layout_activity_maps.xml.flat",
+        "source": "com.gimbernat.radarriders.app-main-84:/layout/activity_maps.xml"
+>>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
     }
 ]
