@@ -1,18 +1,10 @@
 package com.gimbernat.radarriders.ui.scenes.map
 
 
-import android.annotation.SuppressLint
-import android.util.Log
 
-import androidx.compose.animation.ExperimentalAnimationApi
-<<<<<<< HEAD
-import androidx.compose.foundation.layout.Box
-=======
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -36,16 +28,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.gimbernat.radarriders.R
-import com.gimbernat.radarriders.datasources.RadarDataSource
-import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.models.Radar
-//import com.gimbernat.radarriders.ui.scenes.login.LoginSceneFactory
-//import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
-import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -138,22 +124,4 @@ fun MapScene(viewModel: MapSceneViewModel) {
             }
         }
     }
-<<<<<<< HEAD
-=======
-}
-
-
-
-
-@OptIn(ExperimentalAnimationApi::class)
-@Preview(showBackground = true)
-@Composable
-fun MainScenePreview() {
-    RadarRidersTheme {
-        MapSceneFactory(
-            navController = rememberAnimatedNavController(),
-            sessionDataSource = SessionDataSource()
-        )
-    }
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
 }

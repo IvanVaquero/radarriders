@@ -4,11 +4,7 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

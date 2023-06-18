@@ -55,14 +55,9 @@ fun MyApp() {
     val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
-<<<<<<< HEAD
 //    val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
-=======
-    val welcomeSceneFactory = WelcomeSceneFactory(navController)
-    val mapSceneFactory = MapSceneFactory(navController, sessionDataSource)
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
-    //LoginScene
+
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
     //MainScene
     val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)

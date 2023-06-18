@@ -29,7 +29,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.AppRoutes
-import com.gimbernat.radarriders.datasources.AlertDataSource
 import com.gimbernat.radarriders.datasources.RadarDataSource
 //import com.gimbernat.radarriders.datasources.CategoriesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource

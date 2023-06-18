@@ -4,7 +4,6 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-te/values-te.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\966eb0f252b5f0f1270e371c409b93a0\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
@@ -23,25 +22,6 @@
                 },
                 {
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\665de38ead502576d844329696f3b465\\transformed\\material3-1.0.0\\res\\values-te\\values-te.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\a5f3b5fd204735fda0ce14afbf348622\\transformed\\play-services-basement-18.1.0\\res\\values-te\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "135",
-                        "endOffsets": "330"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "4670",
-                        "endColumns": "139",
-                        "endOffsets": "4805"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\665de38ead502576d844329696f3b465\\transformed\\material3-1.0.0\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -58,63 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6e723818f64c6359afb5c0c97f8ca0e7\\transformed\\play-services-base-18.1.0\\res\\values-te\\values.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,136,208",
-                        "endColumns": "80,71,82",
-                        "endOffsets": "131,203,286"
-                    },
-                    "to": {
-                        "startLines": "39,61,64",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3613,6196,6423",
-                        "endColumns": "80,71,82",
-                        "endOffsets": "3689,6263,6501"
-                    }
-                },
-                {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\2c7d6988a645fc416be7f36c827da59e\\transformed\\browser-1.4.0\\res\\values-te\\values-te.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\966eb0f252b5f0f1270e371c409b93a0\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-te\\values-te.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,160,264,374,439,518",
-                        "endColumns": "104,103,109,64,78,81",
-                        "endOffsets": "155,259,369,434,513,595"
-                    },
-                    "to": {
-                        "startLines": "72,73,74,126,129,132",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "7176,7281,7385,11708,11929,12182",
-                        "endColumns": "104,103,109,64,78,81",
-                        "endOffsets": "7276,7380,7490,11768,12003,12259"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-te\\values-te.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,222,334,447,537,642,761,839,915,1006,1099,1194,1288,1388,1481,1576,1671,1762,1853,1942,2056,2160,2259,2374,2479,2594,2756,2859",
-                        "endColumns": "116,111,112,89,104,118,77,75,90,92,94,93,99,92,94,94,90,90,88,113,103,98,114,104,114,161,102,82",
-                        "endOffsets": "217,329,442,532,637,756,834,910,1001,1094,1189,1283,1383,1476,1571,1666,1757,1848,1937,2051,2155,2254,2369,2474,2589,2751,2854,2937"
-                    },
-                    "to": {
-                        "startLines": "6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,133",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "281,398,510,623,713,818,937,1015,1091,1182,1275,1370,1464,1564,1657,1752,1847,1938,2029,2118,2232,2336,2435,2550,2655,2770,2932,12264",
-                        "endColumns": "116,111,112,89,104,118,77,75,90,92,94,93,99,92,94,94,90,90,88,113,103,98,114,104,114,161,102,82",
-                        "endOffsets": "393,505,618,708,813,932,1010,1086,1177,1270,1365,1459,1559,1652,1747,1842,1933,2024,2113,2227,2331,2430,2545,2650,2765,2927,3030,12342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\2c7d6988a645fc416be7f36c827da59e\\transformed\\browser-1.4.0\\res\\values-te\\values-te.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -131,7 +55,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\45fe07c9bf4b53d85321ffb0bf9325e5\\transformed\\navigation-ui-2.5.3\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2,3",
@@ -184,9 +107,6 @@
                 },
                 {
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-te\\values-te.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-te\\values-te.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -205,11 +125,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\da579e675d1505a6aadf0c9afeeace66\\transformed\\ui-1.4.0-alpha05\\res\\values-te\\values-te.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\da579e675d1505a6aadf0c9afeeace66\\transformed\\ui-1.4.0-alpha05\\res\\values-te\\values-te.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -226,28 +142,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\a62ed4d6cb93e7ae98415dd07786b251\\transformed\\core-1.9.0\\res\\values-te\\values-te.xml",
-=======
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\45fe07c9bf4b53d85321ffb0bf9325e5\\transformed\\navigation-ui-2.5.3\\res\\values-te\\values-te.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,122",
-                        "endOffsets": "163,286"
-                    },
-                    "to": {
-                        "startLines": "121,122",
-                        "startColumns": "4,4",
-                        "startOffsets": "11227,11340",
-                        "endColumns": "112,122",
-                        "endOffsets": "11335,11458"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\a62ed4d6cb93e7ae98415dd07786b251\\transformed\\core-1.9.0\\res\\values-te\\values-te.xml",
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -262,7 +157,6 @@
                         "endColumns": "100",
                         "endOffsets": "12520"
                     }
-<<<<<<< HEAD
                 },
                 {
                     "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-te\\values-te.xml",
@@ -280,8 +174,6 @@
                         "endColumns": "116,111,112,89,104,118,77,75,90,92,94,93,99,92,94,94,90,90,88,113,103,98,114,104,114,161,102,82",
                         "endOffsets": "393,505,618,708,813,932,1010,1086,1177,1270,1365,1459,1559,1652,1747,1842,1933,2024,2113,2227,2331,2430,2545,2650,2765,2927,3030,12342"
                     }
-=======
->>>>>>> 51e01194e374b74328d192879485c7ba9e85c2bc
                 }
             ]
         }

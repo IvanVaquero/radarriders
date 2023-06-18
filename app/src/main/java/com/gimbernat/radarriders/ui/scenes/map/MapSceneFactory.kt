@@ -1,6 +1,5 @@
 package com.gimbernat.radarriders.ui.scenes.map
 
-//import com.gimbernat.radarriders.datasources.CategoriesDataSource
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
