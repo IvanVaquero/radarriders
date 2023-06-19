@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.helpers.ComposableFactory
-import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarViewModel
+
 
     class EditAlertSceneFactory(
         private val navController: NavController,

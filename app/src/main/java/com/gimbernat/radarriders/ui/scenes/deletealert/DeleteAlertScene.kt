@@ -1,7 +1,6 @@
-package com.gimbernat.radarriders.ui.scenes.edituser
+package com.gimbernat.radarriders.ui.scenes.deletealert
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.widget.Toast
 
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -30,43 +29,36 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
 import com.gimbernat.radarriders.R
 import com.gimbernat.radarriders.datasources.SessionDataSource
-//import com.gimbernat.radarriders.ui.scenes.login.LoginSceneFactory
-import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
+import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertSceneFactory
+import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertViewModel
+import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarViewModel
+
 //import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EdituserScene(viewModel: EditUserViewModel){
-    val context = LocalContext.current
-    val nameState = remember { mutableStateOf(TextFieldValue("Marc")) }//Llamar usuario Base de Datos.
-    val emailState = remember { mutableStateOf(TextFieldValue("MarcGes@mail.es")) } //LLamar usuario Base de datos
-    val passwordState = remember { mutableStateOf(TextFieldValue("#HyperMegaPassword1234.")) } //LLamar usuario Base de
 
-    fun validateInputs(callback: (name: String, email: String, password: String) -> Unit) {
-        val name = nameState.value.text
-        val email = emailState.value.text
-        val password = passwordState.value.text
-        if (name.isNotEmpty() && email.isNotEmpty()  && password.isNotEmpty()) {
-            callback(name, email, password)
+fun DeleteAlertScene(viewModel: DeleteAlertViewModel){
+    val context = LocalContext.current
+    val titleState = remember { mutableStateOf(TextFieldValue("Accidente")) }
+
+    fun validateInputs(callback: (title: String) -> Unit) {
+        val title = titleState.value.text
+        if (title.isNotEmpty()) {
+            callback(title)
         } else {
             Toast.makeText(
                 context,
-                "Please enter name, email and password.",
+                "Introduzca titulo",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -89,7 +81,7 @@ fun EdituserScene(viewModel: EditUserViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "User Profile",
+                text = "Eliminar alerta",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -99,9 +91,9 @@ fun EdituserScene(viewModel: EditUserViewModel){
             //        Text(text = viewModel.errorMessage.value, color = Color.Red)
             //    }
             OutlinedTextField(
-                value = nameState.value,
-                onValueChange = { nameState.value = it },
-                label = { Text("Name") },
+                value = titleState.value,
+                onValueChange = { titleState.value = it },
+                label = { Text("Titulo") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
@@ -110,52 +102,13 @@ fun EdituserScene(viewModel: EditUserViewModel){
 
                 )
             )
-
-            OutlinedTextField(
-                value = emailState.value,
-                onValueChange = { emailState.value = it },
-                label = { Text("Email") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Email
-                )
-            )
-
-            OutlinedTextField(
-                value = passwordState.value,
-                onValueChange = { passwordState.value = it },
-                label = { Text("Password") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Password
-                ),
-                visualTransformation = PasswordVisualTransformation()
-            )
-
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
-
-                Button(
-                    onClick = {
-                        viewModel.navigateToMain()
-                    },
-                    modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
-                ) {
-                    Text(text = "Go back")
-                }
-
-                Spacer(modifier = Modifier.width(16.dp))
-
                 Button(
 
                     onClick = {
-                        validateInputs(){name, email, password ->
+                        validateInputs(){title ->
                             // viewModel.signUp(email, password)
                         }
                     },
@@ -163,19 +116,36 @@ fun EdituserScene(viewModel: EditUserViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Save")
+                    Text(text = "Eliminar alerta")
+                }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Button(
+                    onClick = {
+                        /*
+                        validateInputs(){ email, password ->
+                            viewModel.login(email, password)
+
+                        }
+                         */
+                        viewModel.navigateToMain()
+                    },
+                    modifier = Modifier.weight(1f),
+                    //            enabled = !viewModel.isLoading.value
+                ) {
+                    Text(text = "Volver")
                 }
             }
         }
     }
 }
-
 @OptIn(ExperimentalAnimationApi::class)
 @Preview(showBackground = true)
 @Composable
-fun EditUserScenePreview() {
+fun DeleteAlertScenePreview() {
     RadarRidersTheme() {
-        EditUserSceneFactory(
+       DeleteAlertSceneFactory(
             navController = rememberAnimatedNavController(),
             sessionDataSource = SessionDataSource()
         )

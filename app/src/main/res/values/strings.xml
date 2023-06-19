@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RadarRiders</string>
     <string name="welcome_text_intro">
-        Welcome to the RadarRiders App, this is the welcome page.
+        Welcome to the RadarRiders App, enjoy your ride!
     </string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>
