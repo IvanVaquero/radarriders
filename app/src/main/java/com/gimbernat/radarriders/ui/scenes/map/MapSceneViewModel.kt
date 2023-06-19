@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.R
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
@@ -57,6 +58,10 @@ class MapSceneViewModel(
 
 //    private val categoriesDataSource: CategoriesDataSource
 ) : ViewModel() {
+    // Estado mutable que tiene el valor de la querry
+    private val _searchQuery = mutableStateOf("")
+    // Ensenar search query en estado immutable
+    val searchQuery: State<String> = _searchQuery
     private val fetchedRadars = mutableListOf<Radar>()
     private val selectedMarkerRadar = mutableStateOf<Radar?>(null)
 
@@ -65,6 +70,11 @@ class MapSceneViewModel(
             fetchedRadars
         }
     }
+
+    fun updateSearchQuery(newQuery: String) {
+        _searchQuery.value = newQuery
+    }
+
     fun navigateToMain() {
         viewModelScope.launch {
             navController.navigate(AppRoutes.EDITUSER.value) {
