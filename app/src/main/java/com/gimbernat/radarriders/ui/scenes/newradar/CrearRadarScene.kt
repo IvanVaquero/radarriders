@@ -88,7 +88,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "Nuevo Radar",
+                text = "Adding a new radar",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -158,7 +158,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Añadir nuevo Radar")
+                    Text(text = "Add Radar")
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -176,7 +176,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
                     modifier = Modifier.weight(1f),
                     //            enabled = !viewModel.isLoading.value
                 ) {
-                    Text(text = "Volver")
+                    Text(text = "Go back")
                 }
             }
         }

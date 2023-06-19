@@ -123,9 +123,7 @@ fun LoginScene(viewModel: LoginViewModel) {
                 Button(
 
                     onClick = {
-                        validateInputs(){ email, password ->
-                            // viewModel.signUp(email, password)
-                        }
+                        viewModel.navigateToRegistro()
                     },
                     modifier = Modifier.weight(1f),
                     // enabled = !viewModel.isLoading.value
@@ -138,13 +136,13 @@ fun LoginScene(viewModel: LoginViewModel) {
 
                 Button(
                     onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
 
-                        }
-                         */
-//                        viewModel.navigateToMain()
+//                        validateInputs(){ email, password ->
+//                            viewModel.login(email, password)
+//
+//                        }
+
+                        viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
         //            enabled = !viewModel.isLoading.value

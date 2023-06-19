@@ -292,4 +292,23 @@ class MapSceneViewModel(
             }
         }
     }
+
+    fun addRadar() {
+            viewModelScope.launch {
+                navController.navigate(AppRoutes.NEWRADAR.value) {
+                    popUpTo(AppRoutes.MAP.value) {
+                        inclusive = true
+                    }
+                }
+            }
+    }
+
+    fun createAlert() {
+        viewModelScope.launch {
+            navController.navigate(AppRoutes.NEWALERT.value) {
+                popUpTo(AppRoutes.MAP.value) {
+                    inclusive = true
+                }
+            }
+        }    }
 }

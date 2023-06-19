@@ -82,7 +82,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "Crear Alerta",
+                text = "Add a new Alert",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -94,7 +94,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
             OutlinedTextField(
                 value = titleState.value,
                 onValueChange = { titleState.value = it },
-                label = { Text("Titulo") },
+                label = { Text("Tittle") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
@@ -107,7 +107,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
             OutlinedTextField(
                 value = descState.value,
                 onValueChange = { descState.value = it },
-                label = { Text("Descripción") },
+                label = { Text("Description") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 34.dp),
@@ -129,7 +129,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
                     // enabled = !viewModel.isLoading.value
 
                 ) {
-                    Text(text = "Añadir alerta")
+                    Text(text = "Add Alert")
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -147,7 +147,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
                     modifier = Modifier.weight(1f),
                     //            enabled = !viewModel.isLoading.value
                 ) {
-                    Text(text = "Volver")
+                    Text(text = "Go back")
                 }
             }
         }

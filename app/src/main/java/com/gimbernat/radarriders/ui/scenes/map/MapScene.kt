@@ -28,6 +28,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.*
 import androidx.compose.ui.Alignment
@@ -77,6 +79,42 @@ fun MapScene(viewModel: MapSceneViewModel) {
                         }
                     }
 
+                    IconButton(onClick = { viewModel.addRadar() }) {
+                        Box(
+                            Modifier
+                                .size(37.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(Color.DarkGray)
+                        ) {
+                            Icon(
+                                Icons.Filled.Add,
+                                contentDescription = "Add Radar",
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .align(Alignment.Center)
+                                    .padding(4.dp)
+                            )
+                        }
+                    }
+
+                    IconButton(onClick = { viewModel.createAlert() }) {
+                        Box(
+                            Modifier
+                                .size(37.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(Color.DarkGray)
+                        ) {
+                            Icon(
+                                Icons.Filled.Warning,
+                                contentDescription = "Create Alert",
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .align(Alignment.Center)
+                                    .padding(4.dp)
+                            )
+                        }
+                    }
+
                     IconButton(onClick = { viewModel.signOut() }) {
                         Box(
                             Modifier
@@ -94,13 +132,11 @@ fun MapScene(viewModel: MapSceneViewModel) {
                             )
                         }
                     }
-
                 }
-
-
             )
         }
     )
+
     { innerPadding ->
         Box(
             modifier = Modifier.fillMaxSize(),

@@ -36,6 +36,8 @@ import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
 import com.gimbernat.radarriders.ui.scenes.login.*
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
 import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
+import com.gimbernat.radarriders.ui.scenes.newalerta.CrearAlertScene
+import com.gimbernat.radarriders.ui.scenes.newalerta.CrearAlertSceneFactory
 import com.gimbernat.radarriders.ui.scenes.newradar.CrearRadarSceneFactory
 import com.gimbernat.radarriders.ui.scenes.registro.RegistroSceneFactory
 import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
@@ -55,7 +57,7 @@ fun MyApp() {
     val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
-//    val welcomeSceneFactory = WelcomeSceneFactory(navController)
+    val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
 
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
@@ -73,6 +75,8 @@ fun MyApp() {
     val crearRadarSceneFactory = CrearRadarSceneFactory(navController, sessionDataSource)
     //Comments
     val commentSceneFactory = CommentSceneFactory(navController, sessionDataSource)
+    //Comments
+    val crearAlertSceneFactory = CrearAlertSceneFactory(navController, sessionDataSource)
 
 
     //Capsule Detail
@@ -159,6 +163,12 @@ fun MyApp() {
                 AppRoutes.COMMENT.value
             ) {
                 commentSceneFactory.create(null)
+            }
+
+            composable(
+                AppRoutes.NEWALERT.value
+            ) {
+                crearAlertSceneFactory.create(null)
             }
 
 /*            composable(

@@ -18,7 +18,7 @@ class EditUserViewModel(
 
     fun navigateToMain() {
         viewModelScope.launch {
-            navController.navigate(AppRoutes.EDITUSER.value) {
+            navController.navigate(AppRoutes.MAP.value) {
                 popUpTo(AppRoutes.EDITUSER.value) {
                     inclusive = true
                 }

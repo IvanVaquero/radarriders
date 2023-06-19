@@ -25,4 +25,13 @@ class RegistroViewModel (
                 }
             }
         }
-    }
+
+    fun navigateToLogin() {
+        viewModelScope.launch {
+            navController.navigate(AppRoutes.LOGIN.value) {
+                popUpTo(AppRoutes.REGISTRO.value) {
+                    inclusive = true
+                }
+            }
+        }    }
+}

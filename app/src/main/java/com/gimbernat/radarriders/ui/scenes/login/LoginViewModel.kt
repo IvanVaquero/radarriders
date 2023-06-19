@@ -87,4 +87,14 @@ class LoginViewModel(
         }
     }
 
+    fun navigateToRegistro() {
+        viewModelScope.launch {
+            navController.navigate(AppRoutes.REGISTRO.value) {
+                popUpTo(AppRoutes.LOGIN.value) {
+                    inclusive = true
+                }
+            }
+        }
+    }
+
 }

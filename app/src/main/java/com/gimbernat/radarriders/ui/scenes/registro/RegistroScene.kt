@@ -101,7 +101,7 @@ fun RegistroScene(viewModel: RegistroViewModel){
             verticalArrangement = Arrangement.Top
         ) {
             Text(
-                text = "Registro",
+                text = "Sign Up",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -164,6 +164,26 @@ fun RegistroScene(viewModel: RegistroViewModel){
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Button(
+                    onClick = {
+                        /*
+                        validateInputs(){ email, password ->
+                            viewModel.login(email, password)
+
+                        }
+                         */
+                        viewModel.navigateToLogin()
+                    },
+                    modifier = Modifier.weight(1f),
+                    //            enabled = !viewModel.isLoading.value
+                ) {
+                    Text(text = "Volver")
+                }
+
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+
+                Button(
 
                     onClick = {
                         validateInputs(){name, email, password ->
@@ -175,24 +195,6 @@ fun RegistroScene(viewModel: RegistroViewModel){
 
                 ) {
                     Text(text = "Sign Up")
-                }
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Button(
-                    onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
-                        viewModel.navigateToMain()
-                    },
-                    modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
-                ) {
-                    Text(text = "Volver")
                 }
             }
         }
