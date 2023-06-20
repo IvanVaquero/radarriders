@@ -26,14 +26,6 @@ class LoginViewModel(
         _loggedIn.value = sessionDataSource.isLoggedIn()
     }
 
-//    fun loginAnonimous() {
-//        viewModelScope.launch {
-//            isLoading.value = true
-//            val success = sessionDataSource.loginUserAnonymous()
-//            _loggedIn.value = success
-//            navigateToMain()
-//        }
-//    }
     fun login(email: String, password: String) {
         viewModelScope.launch {
             isLoading.value = true
@@ -58,24 +50,10 @@ class LoginViewModel(
                 isLoading.value = false
                 errorMessage.value = "Email already in use"
             } else{
-//                navigateToMain()
+                navigateToMain()
             }
         }
     }
-
-//    private fun navigateToMain(){
-//        viewModelScope.launch {
-//        isLoading.value = false
-//            if(_loggedIn.value){
-//                navController.navigate(AppRoutes.MAIN.value){
-//                    popUpTo(AppRoutes.LOGIN.value){
-//                        inclusive = true
-//                    }
-//                }
-//            }
-//        }
-//
-//    }
 
     fun navigateToMain() {
         viewModelScope.launch {
@@ -89,6 +67,7 @@ class LoginViewModel(
 
     fun navigateToRegistro() {
         viewModelScope.launch {
+            isLoading.value = false
             navController.navigate(AppRoutes.REGISTRO.value) {
                 popUpTo(AppRoutes.LOGIN.value) {
                     inclusive = true

@@ -6,7 +6,7 @@ data class Radar(
     var longitude: Double = 0.0,
     var Limit: Int = 0,
     var id: String? = null,
-    var user: Users? = null
+    var user: String? = ""
 ) {
     constructor() : this("", 0.0,0.0,0, null, null)
 }

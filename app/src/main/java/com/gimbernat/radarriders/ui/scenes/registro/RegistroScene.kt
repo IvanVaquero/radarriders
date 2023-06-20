@@ -26,6 +26,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -55,19 +56,17 @@ import com.google.android.gms.maps.model.MarkerOptions
 @Composable
 fun RegistroScene(viewModel: RegistroViewModel){
     val context = LocalContext.current
-    val nameState = remember { mutableStateOf(TextFieldValue("Nombre")) }//Llamar usuario Base de Datos.
     val emailState = remember { mutableStateOf(TextFieldValue("Email")) } //LLamar usuario Base de datos
     val passwordState = remember { mutableStateOf(TextFieldValue("Password")) }
     val confirmPasswordState = remember { mutableStateOf(TextFieldValue("Repeat Password")) }
 
-    fun validateInputs(callback: (name: String, email: String, password: String) -> Unit) {
-        val name = nameState.value.text
+    fun validateInputs(callback: ( email: String, password: String) -> Unit) {
         val email = emailState.value.text
         val password = passwordState.value.text
         val confirmPassword = confirmPasswordState.value.text
-        if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+        if ( email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
             if (password == confirmPassword) {
-                callback(name, email, password)
+                callback( email, password)
             } else {
                 Toast.makeText(
                     context,
@@ -106,23 +105,9 @@ fun RegistroScene(viewModel: RegistroViewModel){
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-
-            //    if (viewModel.errorMessage.value.isNotEmpty()) {
-            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
-            //    }
-            OutlinedTextField(
-                value = nameState.value,
-                onValueChange = { nameState.value = it },
-                label = { Text("Name") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text
-
-                )
-            )
-
+                if (viewModel.errorMessage.value.isNotEmpty()) {
+                    Text(text = viewModel.errorMessage.value, color = Color.Red)
+                }
             OutlinedTextField(
                 value = emailState.value,
                 onValueChange = { emailState.value = it },
@@ -134,7 +119,6 @@ fun RegistroScene(viewModel: RegistroViewModel){
                     keyboardType = KeyboardType.Email
                 )
             )
-
             OutlinedTextField(
                 value = passwordState.value,
                 onValueChange = { passwordState.value = it },
@@ -159,39 +143,30 @@ fun RegistroScene(viewModel: RegistroViewModel){
                 ),
                 visualTransformation = PasswordVisualTransformation()
             )
-
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
+
                 Button(
                     onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
                         viewModel.navigateToLogin()
                     },
                     modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Volver")
                 }
 
-
                 Spacer(modifier = Modifier.width(16.dp))
 
-
                 Button(
-
                     onClick = {
-                        validateInputs(){name, email, password ->
-                            // viewModel.signUp(email, password)
+                        validateInputs {email, password ->
+                             viewModel.signUp(email, password)
                         }
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
 
                 ) {
                     Text(text = "Sign Up")

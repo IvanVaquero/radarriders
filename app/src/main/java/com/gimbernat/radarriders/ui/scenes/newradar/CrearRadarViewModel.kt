@@ -5,14 +5,46 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.AppRoutes
+import com.gimbernat.radarriders.datasources.RadarDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
+import com.gimbernat.radarriders.models.Radar
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 class CrearRadarViewModel (
     private val navController: NavController,
-    private val sessionDataSource: SessionDataSource
+    private val sessionDataSource: SessionDataSource,
+    private val radarDataSource: RadarDataSource
+
     ) : ViewModel() {
+        var isLoading = mutableStateOf(false)
+        val errorMessage = mutableStateOf("")
+
+        fun createRadar(limit: Int, name: String,latitude: Double, longitude: Double) {
+            viewModelScope.launch {
+                isLoading.value = true
+                val newRadar = Radar(
+                        name,
+                        latitude,
+                        longitude,
+                        limit,
+                    null,
+                        sessionDataSource.getCurrentUser()?.email
+                    )
+                try {
+                    isLoading.value = false
+                    if (!radarDataSource.createRadar(newRadar)) {
+                        errorMessage.value = "Error creating radar"
+                    } else {
+                        goBack()
+                    }
+                } catch (e: Exception) {
+                    isLoading.value = false
+                    errorMessage.value = "Error creating radar: ${e.message}"
+                }
+                isLoading.value = false
+            }
+        }
 
         fun navigateToMain() {
             viewModelScope.launch {
@@ -23,4 +55,8 @@ class CrearRadarViewModel (
                 }
             }
         }
+        fun goBack() {
+            navController.popBackStack()
+        }
     }
+
