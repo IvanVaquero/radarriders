@@ -174,7 +174,7 @@ fun RegistroScene(viewModel: RegistroViewModel){
                         viewModel.navigateToLogin()
                     },
                     modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Volver")
                 }
@@ -187,11 +187,11 @@ fun RegistroScene(viewModel: RegistroViewModel){
 
                     onClick = {
                         validateInputs(){name, email, password ->
-                            // viewModel.signUp(email, password)
+                            viewModel.signUp(email, password)
                         }
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
 
                 ) {
                     Text(text = "Sign Up")

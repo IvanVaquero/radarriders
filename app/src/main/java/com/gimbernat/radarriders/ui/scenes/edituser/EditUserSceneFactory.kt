@@ -12,6 +12,6 @@ class EditUserSceneFactory(
     @Composable
     override fun create(id: String?): Any {
         val viewModel = EditUserViewModel(navController, sessionDataSource)
-        return EdituserScene(viewModel = viewModel)
+        return EdituserScene(viewModel = viewModel, sessionDataSource = sessionDataSource)
     }
 }

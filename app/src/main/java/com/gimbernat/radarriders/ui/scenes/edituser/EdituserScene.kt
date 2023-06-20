@@ -51,11 +51,18 @@ import com.google.android.gms.maps.model.MarkerOptions
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EdituserScene(viewModel: EditUserViewModel){
+fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSource) {
     val context = LocalContext.current
     val nameState = remember { mutableStateOf(TextFieldValue("Marc")) }//Llamar usuario Base de Datos.
-    val emailState = remember { mutableStateOf(TextFieldValue("MarcGes@mail.es")) } //LLamar usuario Base de datos
+    val emailState = remember { mutableStateOf(TextFieldValue("")) } //LLamar usuario Base de datos
     val passwordState = remember { mutableStateOf(TextFieldValue("#HyperMegaPassword1234.")) } //LLamar usuario Base de
+
+    LaunchedEffect(Unit) {
+        val currentUser = sessionDataSource.getCurrentUser()
+        currentUser?.let {
+            emailState.value = TextFieldValue(it.email ?: "")
+        }
+    }
 
     fun validateInputs(callback: (name: String, email: String, password: String) -> Unit) {
         val name = nameState.value.text

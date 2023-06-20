@@ -83,8 +83,8 @@ fun MyApp() {
 //    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
 
     // Determine the start destination based on whether the user is logged in or not
-    // val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAIN.value else AppRoutes.WELCOME.value
-    val startDestination = AppRoutes.WELCOME.value
+     val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAP.value else AppRoutes.WELCOME.value
+//    val startDestination = AppRoutes.WELCOME.value
 
 
     //it uses the MyApplicationTheme to define the theme for the application.
