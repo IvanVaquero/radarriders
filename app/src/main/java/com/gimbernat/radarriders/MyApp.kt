@@ -72,7 +72,11 @@ fun MyApp() {
     //Registro
     val registroSceneFactory = RegistroSceneFactory(navController, sessionDataSource)
     //Add Radar
-    val crearRadarSceneFactory = CrearRadarSceneFactory(navController, sessionDataSource)
+    val crearRadarSceneFactory = CrearRadarSceneFactory(
+        navController,
+        sessionDataSource,
+        radarDataSource
+    )
     //Comments
     val commentSceneFactory = CommentSceneFactory(navController, sessionDataSource)
     //Comments

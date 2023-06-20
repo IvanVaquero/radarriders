@@ -4,7 +4,7 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\fd2aa383378d6c979a928cab9779d739\\transformed\\appcompat-1.4.1\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,58 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\966eb0f252b5f0f1270e371c409b93a0\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\19d18428daa52f2aba7d9d3bbf726c61\\transformed\\ui-1.4.0-alpha05\\res\\values-af\\values-af.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,165,266,366,430,508",
-                        "endColumns": "109,100,99,63,77,76",
-                        "endOffsets": "160,261,361,425,503,580"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,201,288,385,486,572,648,739,829,915,979,1044,1122,1203,1274,1355,1425",
+                        "endColumns": "95,86,96,100,85,75,90,89,85,63,64,77,80,70,80,69,119",
+                        "endOffsets": "196,283,380,481,567,643,734,824,910,974,1039,1117,1198,1269,1350,1420,1540"
                     },
                     "to": {
-                        "startLines": "72,73,74,126,129,132",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "7017,7127,7228,11374,11580,11817",
-                        "endColumns": "109,100,99,63,77,76",
-                        "endOffsets": "7122,7223,7323,11433,11653,11889"
+                        "startLines": "37,38,59,60,62,70,71,123,124,125,127,130,131,134,136,137,138",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3324,3420,5884,5981,6155,6850,6926,11134,11224,11310,11438,11658,11736,11975,12147,12228,12298",
+                        "endColumns": "95,86,96,100,85,75,90,89,85,63,64,77,80,70,80,69,119",
+                        "endOffsets": "3415,3502,5976,6077,6236,6921,7012,11219,11305,11369,11498,11731,11812,12041,12223,12293,12413"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\3132d01ec4f3993e2030025b7eef260b\\transformed\\play-services-basement-18.1.0\\res\\values-af\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "138",
+                        "endOffsets": "333"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "4577",
+                        "endColumns": "142",
+                        "endOffsets": "4715"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\4237e9beb3f29cc7bdbfddc3439b3721\\transformed\\play-services-base-18.1.0\\res\\values-af\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,296,448,570,676,822,940,1057,1155,1317,1421,1574,1697,1832,1982,2044,2103",
+                        "endColumns": "102,151,121,105,145,117,116,97,161,103,152,122,134,149,61,58,74",
+                        "endOffsets": "295,447,569,675,821,939,1056,1154,1316,1420,1573,1696,1831,1981,2043,2102,2177"
+                    },
+                    "to": {
+                        "startLines": "40,41,42,43,44,45,46,47,49,50,51,52,53,54,55,56,57",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3583,3690,3846,3972,4082,4232,4354,4475,4720,4886,4994,5151,5278,5417,5571,5637,5700",
+                        "endColumns": "106,155,125,109,149,121,120,101,165,107,156,126,138,153,65,62,78",
+                        "endOffsets": "3685,3841,3967,4077,4227,4349,4470,4572,4881,4989,5146,5273,5412,5566,5632,5695,5774"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\4d8e6f4196b910bba05cecece68c188b\\transformed\\material-1.4.0-beta01\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,41 +91,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\a5f3b5fd204735fda0ce14afbf348622\\transformed\\play-services-basement-18.1.0\\res\\values-af\\values.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\d77f61c3b0f7419e5ab6f8721c6b72a7\\transformed\\navigation-ui-2.5.3\\res\\values-af\\values-af.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "138",
-                        "endOffsets": "333"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,157",
+                        "endColumns": "101,116",
+                        "endOffsets": "152,269"
                     },
                     "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "4577",
-                        "endColumns": "142",
-                        "endOffsets": "4715"
+                        "startLines": "121,122",
+                        "startColumns": "4,4",
+                        "startOffsets": "10915,11017",
+                        "endColumns": "101,116",
+                        "endOffsets": "11012,11129"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\da579e675d1505a6aadf0c9afeeace66\\transformed\\ui-1.4.0-alpha05\\res\\values-af\\values-af.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,288,385,486,572,648,739,829,915,979,1044,1122,1203,1274,1355,1425",
-                        "endColumns": "95,86,96,100,85,75,90,89,85,63,64,77,80,70,80,69,119",
-                        "endOffsets": "196,283,380,481,567,643,734,824,910,974,1039,1117,1198,1269,1350,1420,1540"
-                    },
-                    "to": {
-                        "startLines": "37,38,59,60,62,70,71,123,124,125,127,130,131,134,136,137,138",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3324,3420,5884,5981,6155,6850,6926,11134,11224,11310,11438,11658,11736,11975,12147,12228,12298",
-                        "endColumns": "95,86,96,100,85,75,90,89,85,63,64,77,80,70,80,69,119",
-                        "endOffsets": "3415,3502,5976,6077,6236,6921,7012,11219,11305,11369,11498,11731,11812,12041,12223,12293,12413"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\2c7d6988a645fc416be7f36c827da59e\\transformed\\browser-1.4.0\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\415d4a35921c9ef0f839509a395bba10\\transformed\\browser-1.4.0\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -108,7 +125,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\a62ed4d6cb93e7ae98415dd07786b251\\transformed\\core-1.9.0\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\5b15ab84c93abd6d625ec75c306cb46f\\transformed\\core-1.9.0\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -125,7 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\665de38ead502576d844329696f3b465\\transformed\\material3-1.0.0\\res\\values-af\\values-af.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\ca6d7eaeebeb36d32fae8e8b5fe9101a\\transformed\\material3-1.0.0\\res\\values-af\\values-af.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -142,37 +159,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6e723818f64c6359afb5c0c97f8ca0e7\\transformed\\play-services-base-18.1.0\\res\\values-af\\values.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\3b1b80068a131bf18979c15fa8c99c22\\transformed\\navigation-dynamic-features-fragment-2.5.3\\res\\values-af\\values-af.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,296,448,570,676,822,940,1057,1155,1317,1421,1574,1697,1832,1982,2044,2103",
-                        "endColumns": "102,151,121,105,145,117,116,97,161,103,152,122,134,149,61,58,74",
-                        "endOffsets": "295,447,569,675,821,939,1056,1154,1316,1420,1573,1696,1831,1981,2043,2102,2177"
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,165,266,366,430,508",
+                        "endColumns": "109,100,99,63,77,76",
+                        "endOffsets": "160,261,361,425,503,580"
                     },
                     "to": {
-                        "startLines": "40,41,42,43,44,45,46,47,49,50,51,52,53,54,55,56,57",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3583,3690,3846,3972,4082,4232,4354,4475,4720,4886,4994,5151,5278,5417,5571,5637,5700",
-                        "endColumns": "106,155,125,109,149,121,120,101,165,107,156,126,138,153,65,62,78",
-                        "endOffsets": "3685,3841,3967,4077,4227,4349,4470,4572,4881,4989,5146,5273,5412,5566,5632,5695,5774"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\45fe07c9bf4b53d85321ffb0bf9325e5\\transformed\\navigation-ui-2.5.3\\res\\values-af\\values-af.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,157",
-                        "endColumns": "101,116",
-                        "endOffsets": "152,269"
-                    },
-                    "to": {
-                        "startLines": "121,122",
-                        "startColumns": "4,4",
-                        "startOffsets": "10915,11017",
-                        "endColumns": "101,116",
-                        "endOffsets": "11012,11129"
+                        "startLines": "72,73,74,126,129,132",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "7017,7127,7228,11374,11580,11817",
+                        "endColumns": "109,100,99,63,77,76",
+                        "endOffsets": "7122,7223,7323,11433,11653,11889"
                     }
                 }
             ]

@@ -4,7 +4,17 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\4d8e6f4196b910bba05cecece68c188b\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,143,231,319,407,494,581,668",
+                        "endColumns": "87,87,87,87,86,86,86,86",
+                        "endOffsets": "138,226,314,402,489,576,663,750"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\fd2aa383378d6c979a928cab9779d739\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -20,16 +30,6 @@
                         "endLines": "10,11,15,19",
                         "endColumns": "74,86,12,12",
                         "endOffsets": "825,912,1092,1284"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-v28\\values-v28.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,143,231,319,407,494,581,668",
-                        "endColumns": "87,87,87,87,86,86,86,86",
-                        "endOffsets": "138,226,314,402,489,576,663,750"
                     }
                 }
             ]

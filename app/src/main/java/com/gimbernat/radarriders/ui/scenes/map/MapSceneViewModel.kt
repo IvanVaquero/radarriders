@@ -136,10 +136,8 @@ class MapSceneViewModel(
                     }
                     true // Return true to indicate that the event has been handled
                 }
-
             }
             val markers: MutableList<Marker> = mutableListOf()
-
             for (radar in fetchedRadars) {
                 val markerOptions =
                     MarkerOptions().position(
@@ -184,6 +182,7 @@ class MapSceneViewModel(
             }
         }
     }
+
 
     private fun getCurrentLocation(context: Context, onLocationReceived: (Location?) -> Unit) {
         val fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)

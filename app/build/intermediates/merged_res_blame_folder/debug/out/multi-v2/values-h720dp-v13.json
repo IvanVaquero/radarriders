@@ -4,7 +4,7 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\9048a97cb415d12a7a1b334a07e98f58\\transformed\\appcompat-1.4.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\poivo\\.gradle\\caches\\transforms-3\\fd2aa383378d6c979a928cab9779d739\\transformed\\appcompat-1.4.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
