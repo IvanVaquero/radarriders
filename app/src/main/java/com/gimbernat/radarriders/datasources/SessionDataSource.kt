@@ -67,4 +67,16 @@ class SessionDataSource : ISessionDataSource{
         // Sign out the currently authenticated user using the Firebase Authentication SDK
         auth.signOut()
     }
+
+    suspend fun updateEmail(newEmail: String): Boolean {
+        val user = this.getCurrentUser()
+        return user?.let {
+            try {
+                it.updateEmail(newEmail).await()
+                true
+            } catch (e: Exception) {
+                false
+            }
+        } ?: false
+    }
 }

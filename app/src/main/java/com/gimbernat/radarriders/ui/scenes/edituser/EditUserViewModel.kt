@@ -2,6 +2,7 @@ package com.gimbernat.radarriders.ui.scenes.edituser
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
@@ -15,6 +16,7 @@ class EditUserViewModel(
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource
 ) : ViewModel() {
+    val message = MutableLiveData<String>()
 
     fun navigateToMain() {
         viewModelScope.launch {
@@ -25,4 +27,17 @@ class EditUserViewModel(
             }
         }
     }
+
+    fun updateEmail(newEmail: String) {
+        viewModelScope.launch {
+            val result = sessionDataSource.updateEmail(newEmail)
+            if (result) {
+                message.value = "Email successfully updated"
+                navigateToMain()
+            } else {
+                message.value = "Failed to update email"
+            }
+        }
+    }
+
 }

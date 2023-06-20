@@ -53,27 +53,33 @@ import com.google.android.gms.maps.model.MarkerOptions
 @Composable
 fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSource) {
     val context = LocalContext.current
-    val nameState = remember { mutableStateOf(TextFieldValue("Marc")) }//Llamar usuario Base de Datos.
+    val message by viewModel.message.observeAsState()
+    message?.let {
+        Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+    }
+//    val nameState = remember { mutableStateOf(TextFieldValue("Marc")) }//Llamar usuario Base de Datos.
     val emailState = remember { mutableStateOf(TextFieldValue("")) } //LLamar usuario Base de datos
-    val passwordState = remember { mutableStateOf(TextFieldValue("#HyperMegaPassword1234.")) } //LLamar usuario Base de
+    val oldEmailState = remember { mutableStateOf(TextFieldValue("")) }
+//    val passwordState = remember { mutableStateOf(TextFieldValue("#HyperMegaPassword1234.")) } //LLamar usuario Base de
 
     LaunchedEffect(Unit) {
         val currentUser = sessionDataSource.getCurrentUser()
         currentUser?.let {
-            emailState.value = TextFieldValue(it.email ?: "")
+            oldEmailState.value = TextFieldValue(it.email ?: "")
         }
     }
 
-    fun validateInputs(callback: (name: String, email: String, password: String) -> Unit) {
-        val name = nameState.value.text
+    fun validateInputs(callback: (email: String) -> Unit) {
+//        val name = nameState.value.text
         val email = emailState.value.text
-        val password = passwordState.value.text
-        if (name.isNotEmpty() && email.isNotEmpty()  && password.isNotEmpty()) {
-            callback(name, email, password)
+//        val password = passwordState.value.text
+//        if (name.isNotEmpty() && email.isNotEmpty()  && password.isNotEmpty()) {
+        if (email.isNotEmpty()) {
+            callback(email)
         } else {
             Toast.makeText(
                 context,
-                "Please enter name, email and password.",
+                "Email can't be void.",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -105,23 +111,33 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
             //    if (viewModel.errorMessage.value.isNotEmpty()) {
             //        Text(text = viewModel.errorMessage.value, color = Color.Red)
             //    }
+//            OutlinedTextField(
+//                value = nameState.value,
+//                onValueChange = { nameState.value = it },
+//                label = { Text("Name") },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(bottom = 16.dp),
+//                keyboardOptions = KeyboardOptions(
+//                    keyboardType = KeyboardType.Text
+//
+//                )
+//            )
+
             OutlinedTextField(
-                value = nameState.value,
-                onValueChange = { nameState.value = it },
-                label = { Text("Name") },
+                value = oldEmailState.value,
+                onValueChange = { },
+                label = { Text("Old Email") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text
-
-                )
+                enabled = false
             )
 
             OutlinedTextField(
                 value = emailState.value,
                 onValueChange = { emailState.value = it },
-                label = { Text("Email") },
+                label = { Text("New Email") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp),
@@ -129,19 +145,18 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                     keyboardType = KeyboardType.Email
                 )
             )
-
-            OutlinedTextField(
-                value = passwordState.value,
-                onValueChange = { passwordState.value = it },
-                label = { Text("Password") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Password
-                ),
-                visualTransformation = PasswordVisualTransformation()
-            )
+//            OutlinedTextField(
+//                value = passwordState.value,
+//                onValueChange = { passwordState.value = it },
+//                label = { Text("Password") },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(bottom = 16.dp),
+//                keyboardOptions = KeyboardOptions(
+//                    keyboardType = KeyboardType.Password
+//                ),
+//                visualTransformation = PasswordVisualTransformation()
+//            )
 
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
@@ -162,9 +177,8 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                 Button(
 
                     onClick = {
-                        validateInputs(){name, email, password ->
-                            // viewModel.signUp(email, password)
-                        }
+                        validateInputs(){email ->
+                            viewModel.updateEmail(email)                        }
                     },
                     modifier = Modifier.weight(1f),
                     // enabled = !viewModel.isLoading.value
