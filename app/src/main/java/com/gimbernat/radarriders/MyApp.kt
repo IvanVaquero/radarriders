@@ -26,7 +26,6 @@ import androidx.navigation.navArgument
 import com.gimbernat.radarriders.datasources.RadarDataSource
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.ui.scenes.comments.CommentSceneFactory
 import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertSceneFactory
 import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarSceneFactory
 import com.gimbernat.radarriders.ui.scenes.edituser.EditUserSceneFactory
@@ -61,8 +60,7 @@ fun MyApp() {
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
 
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
-    //MainScene
-    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
+
     //Edit User
     val edituserSceneFactory = EditUserSceneFactory(navController, sessionDataSource)
     //Edit Radar
@@ -73,10 +71,6 @@ fun MyApp() {
     val registroSceneFactory = RegistroSceneFactory(navController, sessionDataSource)
     //Add Radar
     val crearRadarSceneFactory = CrearRadarSceneFactory(navController, sessionDataSource)
-    //Comments
-    val commentSceneFactory = CommentSceneFactory(navController, sessionDataSource)
-    //Comments
-    val crearAlertSceneFactory = CrearAlertSceneFactory(navController, sessionDataSource)
 
 
     //Capsule Detail
@@ -157,18 +151,6 @@ fun MyApp() {
                 AppRoutes.NEWRADAR.value
             ) {
                 crearRadarSceneFactory.create(null)
-            }
-
-            composable(
-                AppRoutes.COMMENT.value
-            ) {
-                commentSceneFactory.create(null)
-            }
-
-            composable(
-                AppRoutes.NEWALERT.value
-            ) {
-                crearAlertSceneFactory.create(null)
             }
 
 /*            composable(
