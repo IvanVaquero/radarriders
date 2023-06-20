@@ -4,7 +4,7 @@
             "outputFile": "com.gimbernat.radarriders.app-mergeDebugResources-80:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\6cd74daf4f6876d25306bf6b43cbe1c4\\transformed\\material-1.4.0-beta01\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\Kino\\.gradle\\caches\\transforms-3\\4d8e6f4196b910bba05cecece68c188b\\transformed\\material-1.4.0-beta01\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

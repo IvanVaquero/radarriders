@@ -26,6 +26,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -49,12 +50,13 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 fun CrearRadarScene(viewModel: CrearRadarViewModel){
     val context = LocalContext.current
+
     val limitState = remember { mutableStateOf(80) }//Llama el limite de velocidad.
     val nameState = remember { mutableStateOf(TextFieldValue("Nombre Radar")) } //LLamar nombre radar
-    val latitudeState = remember { mutableStateOf(1234) }
-    val longitudeState = remember { mutableStateOf(4321) }
+    val latitudeState = remember { mutableStateOf(1234.0) }
+    val longitudeState = remember { mutableStateOf(4321.0) }
 
-    fun validateInputs(callback: (limit: Int, name: String,latitude: Int, longitude: Int) -> Unit) {
+    fun validateInputs(callback: (limit: Int, name: String,latitude: Double, longitude: Double) -> Unit) {
         val limit = limitState.value
         val name = nameState.value.text
         val latitude = latitudeState.value
@@ -65,7 +67,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
         } else {
             Toast.makeText(
                 context,
-                "Please enter limit, name and locations ",
+                "Please enter limit and name",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -94,9 +96,9 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            //    if (viewModel.errorMessage.value.isNotEmpty()) {
-            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
-            //    }
+            if (viewModel.errorMessage.value.isNotEmpty()) {
+                Text(text = viewModel.errorMessage.value, color = Color.Red)
+            }
             OutlinedTextField(
                 value = nameState.value,
                 onValueChange = { nameState.value = it },
@@ -124,7 +126,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
 
             OutlinedTextField(
                 value = latitudeState.value.toString(),
-                onValueChange = { latitudeState.value = it.toIntOrNull() ?: 0 },
+                onValueChange = { latitudeState.value = (it.toIntOrNull() ?: 0).toDouble() },
                 label = { Text("Latitud") },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -135,7 +137,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
             )
             OutlinedTextField(
                 value = longitudeState.value.toString(),
-                onValueChange = { longitudeState.value = it.toIntOrNull() ?: 0 },
+                onValueChange = { longitudeState.value = (it.toIntOrNull() ?: 0).toDouble() },
                 label = { Text("Longitud") },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -151,11 +153,11 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
 
                     onClick = {
                         validateInputs { limit, name, latitude, longitude ->
-                            // viewModel.signUp(email, password)
+                             viewModel.createRadar(limit, name, latitude, longitude)
                         }
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
 
                 ) {
                     Text(text = "Add Radar")
@@ -165,16 +167,10 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
 
                 Button(
                     onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
-                        viewModel.navigateToMain()
+                        viewModel.goBack()
                     },
                     modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Go back")
                 }

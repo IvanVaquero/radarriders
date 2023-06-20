@@ -60,14 +60,13 @@ fun RegistroScene(viewModel: RegistroViewModel){
     val passwordState = remember { mutableStateOf(TextFieldValue("Password")) }
     val confirmPasswordState = remember { mutableStateOf(TextFieldValue("Repeat Password")) }
 
-    fun validateInputs(callback: (name: String, email: String, password: String) -> Unit) {
-        val name = nameState.value.text
+    fun validateInputs(callback: ( email: String, password: String) -> Unit) {
         val email = emailState.value.text
         val password = passwordState.value.text
         val confirmPassword = confirmPasswordState.value.text
-        if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+        if ( email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
             if (password == confirmPassword) {
-                callback(name, email, password)
+                callback( email, password)
             } else {
                 Toast.makeText(
                     context,
@@ -106,23 +105,9 @@ fun RegistroScene(viewModel: RegistroViewModel){
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-
-            //    if (viewModel.errorMessage.value.isNotEmpty()) {
-            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
-            //    }
-            OutlinedTextField(
-                value = nameState.value,
-                onValueChange = { nameState.value = it },
-                label = { Text("Name") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text
-
-                )
-            )
-
+                if (viewModel.errorMessage.value.isNotEmpty()) {
+                    Text(text = viewModel.errorMessage.value, color = Color.Red)
+                }
             OutlinedTextField(
                 value = emailState.value,
                 onValueChange = { emailState.value = it },
@@ -163,6 +148,7 @@ fun RegistroScene(viewModel: RegistroViewModel){
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
+
                 Button(
                     onClick = {
                         /*
@@ -186,8 +172,8 @@ fun RegistroScene(viewModel: RegistroViewModel){
                 Button(
 
                     onClick = {
-                        validateInputs(){name, email, password ->
-                            viewModel.signUp(email, password)
+                        validateInputs {email, password ->
+                             viewModel.signUp(email, password)
                         }
                     },
                     modifier = Modifier.weight(1f),

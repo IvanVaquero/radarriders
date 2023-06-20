@@ -11,10 +11,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class RegistroViewModel(
+class RegistroViewModel (
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource
-) : ViewModel() {
+    ) : ViewModel() {
 
     var isLoading = mutableStateOf(false)
     private val _loggedIn = MutableStateFlow(false)
@@ -23,16 +23,15 @@ class RegistroViewModel(
     fun isLoggedIn() {
         _loggedIn.value = sessionDataSource.isLoggedIn()
     }
-
     fun signUp(email: String, password: String) {
         viewModelScope.launch {
             isLoading.value = true
             val success = sessionDataSource.signUpUser(email, password)
             _loggedIn.value = success
-            if (!success) {
+            if(!success){
                 isLoading.value = false
                 errorMessage.value = "Email already in use"
-            } else {
+            } else{
                 navigateToMain()
             }
         }
@@ -58,4 +57,3 @@ class RegistroViewModel(
         }
     }
 }
-

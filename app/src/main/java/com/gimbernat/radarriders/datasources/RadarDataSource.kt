@@ -68,17 +68,10 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun createRadar(radar: Radar): Boolean {
         return try {
-//          Creamos aqui el objeto en la base de datos
             val uid = UUID.randomUUID().toString()
             val newId = UUID.randomUUID().toString()
             val radarsTable = database.getReference("Radars").child(uid).child(newId)
             radarsTable.setValue(radar)
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false
@@ -87,15 +80,8 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun editRadar(uid: String, idRadar: String, radar: Radar): Boolean {
         return try {
-//            Editamos aqui el objeto en la base de datos
             val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
             radarsTable.setValue(radar)
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false
@@ -104,15 +90,8 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun deleteRadar(uid: String, idRadar: String): Boolean {
         return try {
-//          Eliminamos aqui el objeto en la base de datos
             val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
             radarsTable.removeValue()
-                .addOnSuccessListener {
-//                    Show Dialog confirmation
-                }
-                .addOnFailureListener { error ->
-//                    Show Dialog Error
-                }
             true
         } catch (e: Exception) {
             false

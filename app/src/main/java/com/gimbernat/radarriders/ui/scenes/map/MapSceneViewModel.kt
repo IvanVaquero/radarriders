@@ -214,7 +214,6 @@ class MapSceneViewModel(
             }
             // Request location updates
             fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null)
-            Log.d("CategoryDetailSceneViewModel", "Requesting location updates...")
             // fusedLocationClient.removeLocationUpdates(locationCallback)
 
 
