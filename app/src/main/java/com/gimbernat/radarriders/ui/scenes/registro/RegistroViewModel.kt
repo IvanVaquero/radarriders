@@ -16,15 +16,26 @@ class RegistroViewModel (
     private val sessionDataSource: SessionDataSource
     ) : ViewModel() {
 
-        fun navigateToMain() {
-            viewModelScope.launch {
-                navController.navigate(AppRoutes.MAP.value) {
-                    popUpTo(AppRoutes.REGISTRO.value) {
-                        inclusive = true
-                    }
-                }
+    var isLoading = mutableStateOf(false)
+    private val _loggedIn = MutableStateFlow(false)
+    val errorMessage = mutableStateOf("")
+
+    fun isLoggedIn() {
+        _loggedIn.value = sessionDataSource.isLoggedIn()
+    }
+    fun signUp(email: String, password: String) {
+        viewModelScope.launch {
+            isLoading.value = true
+            val success = sessionDataSource.signUpUser(email, password)
+            _loggedIn.value = success
+            if(!success){
+                isLoading.value = false
+                errorMessage.value = "Email already in use"
+            } else{
+//                navigateToMain()
             }
         }
+    }
 
     fun navigateToLogin() {
         viewModelScope.launch {

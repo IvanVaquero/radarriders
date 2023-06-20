@@ -15,7 +15,7 @@ class LoginViewModel(
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource
 ) : ViewModel() {
-/*
+
     private val _loggedIn = MutableStateFlow(false)
     val loggedIn: StateFlow<Boolean> = _loggedIn
 
@@ -26,14 +26,14 @@ class LoginViewModel(
         _loggedIn.value = sessionDataSource.isLoggedIn()
     }
 
-    fun loginAnonimous() {
-        viewModelScope.launch {
-            isLoading.value = true
-            val success = sessionDataSource.loginUserAnonymous()
-            _loggedIn.value = success
+//    fun loginAnonimous() {
+//        viewModelScope.launch {
+//            isLoading.value = true
+//            val success = sessionDataSource.loginUserAnonymous()
+//            _loggedIn.value = success
 //            navigateToMain()
-        }
-    }
+//        }
+//    }
     fun login(email: String, password: String) {
         viewModelScope.launch {
             isLoading.value = true
@@ -43,7 +43,7 @@ class LoginViewModel(
                 isLoading.value = false
                 errorMessage.value = "Incorrect Credentials"
             } else{
-//                navigateToMain()
+                navigateToMain()
             }
 
         }
@@ -62,7 +62,7 @@ class LoginViewModel(
             }
         }
     }
-*/
+
 //    private fun navigateToMain(){
 //        viewModelScope.launch {
 //        isLoading.value = false
