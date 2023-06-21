@@ -102,6 +102,8 @@ class MapSceneViewModel(
 
         this.initMapObjects()
         mapView.getMapAsync { googleMap ->
+            val yellowMarker = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)
+            val blueMarker = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)
 
             // Enable zoom controls
             googleMap.uiSettings.isZoomControlsEnabled = true
@@ -149,6 +151,38 @@ class MapSceneViewModel(
                     markers.add(it)
                 }
             }
+
+            val marker1 = MarkerOptions()
+                .position(LatLng(41.3879, 2.1699))
+                .title("Alert 1")
+                .icon(yellowMarker)
+
+            val marker2 = MarkerOptions()
+                .position(LatLng(41.3926, 2.1461))
+                .title("Alert 2")
+                .icon(yellowMarker)
+
+            val marker3 = MarkerOptions()
+                .position(LatLng(41.3747, 2.1403))
+                .title("Radar 1")
+                .icon(blueMarker)
+
+            val marker4 = MarkerOptions()
+                .position(LatLng(41.3964, 2.1677))
+                .title("Radar 2")
+                .icon(blueMarker)
+
+            val marker5 = MarkerOptions()
+                .position(LatLng(41.3864, 2.1688))
+                .title("Radar 3")
+                .icon(blueMarker)
+
+            googleMap.addMarker(marker1)
+            googleMap.addMarker(marker2)
+            googleMap.addMarker(marker3)
+            googleMap.addMarker(marker4)
+            googleMap.addMarker(marker5)
+
 
             googleMap.setOnMarkerClickListener { marker ->
                 val selectedLocation = fetchedRadars.find { it.radarName == marker.title }
