@@ -157,7 +157,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
 
                 Button(
                     onClick = {
-                        viewModel.goBack()
+                        viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
                     enabled = !viewModel.isLoading.value

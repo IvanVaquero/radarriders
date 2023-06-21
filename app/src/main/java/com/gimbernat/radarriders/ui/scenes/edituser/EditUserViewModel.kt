@@ -41,5 +41,4 @@ class EditUserViewModel(
             isLoading.value = false
         }
     }
-
 }

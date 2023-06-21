@@ -11,10 +11,13 @@ import com.gimbernat.radarriders.models.Alert
 import kotlinx.coroutines.launch
 
 class CrearAlertViewModel (
+
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource,
     private val alertDataSource: AlertDataSource
+
     ) : ViewModel() {
+
     var isLoading = mutableStateOf(false)
     val errorMessage = mutableStateOf("")
 
@@ -31,7 +34,7 @@ class CrearAlertViewModel (
                 if (!alertDataSource.createAlert(newAlert)) {
                     errorMessage.value = "Error al crear alerta"
                 } else {
-                    goBack()
+                    navigateToMain()
                 }
             } catch (e: Exception) {
                 isLoading.value = false
@@ -41,9 +44,6 @@ class CrearAlertViewModel (
         }
     }
 
-    private fun goBack() {
-        navController.popBackStack()
-    }
         fun navigateToMain() {
             viewModelScope.launch {
                 navController.navigate(AppRoutes.MAP.value) {

@@ -35,7 +35,7 @@ class CrearRadarViewModel (
                     if (!radarDataSource.createRadar(newRadar)) {
                         errorMessage.value = "Error al crear radar"
                     } else {
-                        goBack()
+                        navigateToMain()
                     }
                 } catch (e: Exception) {
                     isLoading.value = false
@@ -53,9 +53,6 @@ class CrearRadarViewModel (
                     }
                 }
             }
-        }
-        fun goBack() {
-            navController.popBackStack()
         }
     }
 
