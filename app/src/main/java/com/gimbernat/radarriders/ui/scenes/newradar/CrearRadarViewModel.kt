@@ -24,13 +24,13 @@ class CrearRadarViewModel (
             viewModelScope.launch {
                 isLoading.value = true
                 val newRadar = Radar(
-                        name,
-                        latitude,
-                        longitude,
-                        limit,
-                    null,
-                        sessionDataSource.getCurrentUser()?.email
-                    )
+                    name,
+                    latitude,
+                    longitude,
+                    limit,
+                null,
+                    sessionDataSource.getCurrentUser()?.email
+                )
                 try {
                     isLoading.value = false
                     if (!radarDataSource.createRadar(newRadar)) {

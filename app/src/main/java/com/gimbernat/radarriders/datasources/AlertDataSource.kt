@@ -19,7 +19,7 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
     private var alerts: List<Alert> = mutableListOf<Alert>()
 
     fun getAll(callback: (List<Alert>) -> Unit)  {
-        val ref = database.getReference("Alerts")
+        val ref = database.getReference("RadarRiders").child("Alerts")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val fetchedAlerts = mutableListOf<Alert>()
@@ -41,7 +41,7 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
 
     override suspend fun fetch(): List<Alert> {
         return suspendCoroutine { continuation ->
-            val ref = database.getReference("Alerts")
+            val ref = database.getReference("RadarRiders").child("Alerts")
             ref.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val fetchedAlerts = mutableListOf<Alert>()
@@ -69,9 +69,8 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
 
     override fun createAlert(alert: Alert): Boolean {
         return try {
-            val uid = UUID.randomUUID().toString()
             val newId = UUID.randomUUID().toString()
-            val alertsTable = database.getReference("Alerts").child(uid).child(newId)
+            val alertsTable = database.getReference("RadarRiders").child("Alerts").child(newId)
             alertsTable.setValue(alert)
             true
         } catch (e: Exception) {

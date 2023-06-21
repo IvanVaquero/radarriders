@@ -23,11 +23,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.gimbernat.radarriders.datasources.AlertDataSource
 import com.gimbernat.radarriders.datasources.RadarDataSource
 // import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertSceneFactory
-import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarSceneFactory
 import com.gimbernat.radarriders.ui.scenes.edituser.EditUserSceneFactory
 import com.gimbernat.radarriders.ui.scenes.edituser.EdituserScene
 import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
@@ -54,23 +53,32 @@ fun MyApp() {
     val navController = rememberAnimatedNavController()
     val sessionDataSource = SessionDataSource()
     val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
+    val alertDataSource = AlertDataSource(database = FirebaseDatabase.getInstance())
 
     //WelcomeScene
     val welcomeSceneFactory = WelcomeSceneFactory(navController)
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
 
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
-
+    //MainScene
+    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
     //Edit User
     val edituserSceneFactory = EditUserSceneFactory(navController, sessionDataSource)
-    //Edit Radar
-    val editRadarSceneFactory = EditRadarSceneFactory(navController, sessionDataSource)
-    //Edit Alerts
-    val editAlertSceneFactory = EditAlertSceneFactory(navController, sessionDataSource)
     //Registro
     val registroSceneFactory = RegistroSceneFactory(navController, sessionDataSource)
     //Add Radar
-    val crearRadarSceneFactory = CrearRadarSceneFactory(navController, sessionDataSource)
+    val crearRadarSceneFactory = CrearRadarSceneFactory(
+        navController,
+        sessionDataSource,
+        radarDataSource
+    )
+
+    val crearAlertSceneFactory = CrearAlertSceneFactory(
+        navController,
+        sessionDataSource,
+        alertDataSource
+    )
+
 
 
     //Capsule Detail
@@ -130,18 +138,6 @@ fun MyApp() {
             }
 
             composable(
-                AppRoutes.EDITRADAR.value
-            ) {
-                editRadarSceneFactory.create(null)
-            }
-
-            composable(
-                AppRoutes.EDITALERT.value
-            ) {
-                editAlertSceneFactory.create(null)
-            }
-
-            composable(
                 AppRoutes.REGISTRO.value
             ) {
                 registroSceneFactory.create(null)
@@ -152,6 +148,13 @@ fun MyApp() {
             ) {
                 crearRadarSceneFactory.create(null)
             }
+
+            composable(
+                AppRoutes.NEWALERT.value
+            ) {
+                crearAlertSceneFactory.create(null)
+            }
+
 
 /*            composable(
                 route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",

@@ -17,8 +17,30 @@ import kotlin.coroutines.suspendCoroutine
 class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource {
     private var radars: List<Radar> = mutableListOf<Radar>()
 
+    fun getAllNOW(): List<Radar> {
+        val ref = database.getReference("RadarRiders").child("Radars")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val fetchedRadars = mutableListOf<Radar>()
+                for (radarSnapshot in snapshot.children) {
+                    val radar = radarSnapshot.getValue(Radar::class.java)
+                    if (radar != null) {
+                        radar.id = radarSnapshot.key
+                        fetchedRadars.add(radar)
+                    }
+                }
+                radars = fetchedRadars
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+        return radars
+    }
+
     fun getAll(callback: (List<Radar>) -> Unit)  {
-        val ref = database.getReference("Radars")
+        val ref = database.getReference("RadarRiders").child("Radars")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val fetchedRadars = mutableListOf<Radar>()
@@ -40,7 +62,7 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override suspend fun fetch(): List<Radar> {
         return suspendCoroutine { continuation ->
-            val ref = database.getReference("Radars")
+            val ref = database.getReference("RadarRiders").child("Radars")
             ref.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val fetchedRadars = mutableListOf<Radar>()
@@ -68,9 +90,8 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun createRadar(radar: Radar): Boolean {
         return try {
-            val uid = UUID.randomUUID().toString()
             val newId = UUID.randomUUID().toString()
-            val radarsTable = database.getReference("Radars").child(uid).child(newId)
+            val radarsTable = database.getReference("RadarRiders").child("Radars").child(newId)
             radarsTable.setValue(radar)
             true
         } catch (e: Exception) {
@@ -80,7 +101,7 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun editRadar(uid: String, idRadar: String, radar: Radar): Boolean {
         return try {
-            val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
+            val radarsTable = database.getReference("RadarRiders").child("Radars").child(uid).child(idRadar)
             radarsTable.setValue(radar)
             true
         } catch (e: Exception) {
@@ -90,7 +111,7 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
 
     override fun deleteRadar(uid: String, idRadar: String): Boolean {
         return try {
-            val radarsTable = database.getReference("Radars").child(uid).child(idRadar)
+            val radarsTable = database.getReference("RadarRiders").child("Radars").child(uid).child(idRadar)
             radarsTable.removeValue()
             true
         } catch (e: Exception) {

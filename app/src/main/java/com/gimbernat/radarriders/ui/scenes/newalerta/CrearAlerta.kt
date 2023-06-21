@@ -25,6 +25,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -35,9 +36,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gimbernat.radarriders.R
 import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertSceneFactory
-import com.gimbernat.radarriders.ui.scenes.editalert.EditAlertViewModel
-import com.gimbernat.radarriders.ui.scenes.editradar.EditRadarViewModel
 
 //import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
@@ -47,7 +45,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun CrearAlertScene(viewModel: CrearAlertViewModel){
+fun CrearAlertScene(viewModel: CrearAlertViewModel) {
     val context = LocalContext.current
     val titleState = remember { mutableStateOf(TextFieldValue("Titulo Alerta")) }
     val descState = remember { mutableStateOf(TextFieldValue("descripción")) }
@@ -88,9 +86,9 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            //    if (viewModel.errorMessage.value.isNotEmpty()) {
-            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
-            //    }
+            if (viewModel.errorMessage.value.isNotEmpty()) {
+                Text(text = viewModel.errorMessage.value, color = Color.Red)
+            }
             OutlinedTextField(
                 value = titleState.value,
                 onValueChange = { titleState.value = it },
@@ -115,18 +113,19 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
                     keyboardType = KeyboardType.Text
                 )
             )
-            Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Button(
 
                     onClick = {
-                        validateInputs(){title, desc ->
-                            // viewModel.signUp(email, password)
+                        validateInputs() { title, desc ->
+                            viewModel.createAlert(desc, title)
                         }
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
 
                 ) {
                     Text(text = "Add Alert")
@@ -136,31 +135,14 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel){
 
                 Button(
                     onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
                         viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Go back")
                 }
             }
         }
-    }
-}
-@OptIn(ExperimentalAnimationApi::class)
-@Preview(showBackground = true)
-@Composable
-fun CrearAlertaScenePreview() {
-    RadarRidersTheme() {
-        CrearAlertSceneFactory(
-            navController = rememberAnimatedNavController(),
-            sessionDataSource = SessionDataSource()
-        )
     }
 }

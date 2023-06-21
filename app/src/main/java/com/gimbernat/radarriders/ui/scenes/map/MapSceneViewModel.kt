@@ -62,8 +62,10 @@ class MapSceneViewModel(
     private val _searchQuery = mutableStateOf("")
     // Ensenar search query en estado immutable
     val searchQuery: State<String> = _searchQuery
-    private val fetchedRadars = mutableListOf<Radar>()
+    private var fetchedRadars = mutableListOf<Radar>()
     private val selectedMarkerRadar = mutableStateOf<Radar?>(null)
+
+
 
     private fun initMapObjects(){
         radarDataSource.getAll {
@@ -136,14 +138,12 @@ class MapSceneViewModel(
                     }
                     true // Return true to indicate that the event has been handled
                 }
-
             }
             val markers: MutableList<Marker> = mutableListOf()
-
             for (radar in fetchedRadars) {
                 val markerOptions =
                     MarkerOptions().position(
-                        LatLng(radar.latitude, radar.longitude)).title(radar.RadarName)
+                        LatLng(radar.latitude, radar.longitude)).title(radar.radarName)
                 val marker = googleMap.addMarker(markerOptions)
                 marker?.let {
                     markers.add(it)
@@ -151,7 +151,7 @@ class MapSceneViewModel(
             }
 
             googleMap.setOnMarkerClickListener { marker ->
-                val selectedLocation = fetchedRadars.find { it.RadarName == marker.title }
+                val selectedLocation = fetchedRadars.find { it.radarName == marker.title }
                 selectedMarkerRadar.value = selectedLocation
 
                 // Perform actions with the selected location, such as navigation or showing more information
@@ -184,6 +184,7 @@ class MapSceneViewModel(
             }
         }
     }
+
 
     private fun getCurrentLocation(context: Context, onLocationReceived: (Location?) -> Unit) {
         val fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
