@@ -1,6 +1,7 @@
 package com.gimbernat.radarriders.datasources
+import android.util.Log
 import com.gimbernat.radarriders.datasources.interfaces.ISessionDataSource
-import com.google.firebase.auth.*;
+import com.google.firebase.auth.*
 import kotlinx.coroutines.tasks.await
 
 /**
@@ -73,8 +74,10 @@ class SessionDataSource : ISessionDataSource{
         return user?.let {
             try {
                 it.updateEmail(newEmail).await()
+                Log.e("updateEmail_true", "Email Updated")
                 true
             } catch (e: Exception) {
+                Log.e("updateEmail_false", "Email NOT Updated")
                 false
             }
         } ?: false

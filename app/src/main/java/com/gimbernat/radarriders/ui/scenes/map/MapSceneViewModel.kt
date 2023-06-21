@@ -8,13 +8,10 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.R
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,16 +21,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.AppRoutes
 import com.gimbernat.radarriders.datasources.RadarDataSource
-//import com.gimbernat.radarriders.datasources.CategoriesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.models.Alert
 import com.gimbernat.radarriders.models.Radar
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -47,7 +40,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-//import com.gimbernat.radarriders.models.Category
 import kotlinx.coroutines.launch
 
 class MapSceneViewModel(
@@ -56,10 +48,10 @@ class MapSceneViewModel(
     private val radarDataSource: RadarDataSource,
     private val context: Context,
 
-//    private val categoriesDataSource: CategoriesDataSource
 ) : ViewModel() {
     // Estado mutable que tiene el valor de la querry
     private val _searchQuery = mutableStateOf("")
+
     // Ensenar search query en estado immutable
     val searchQuery: State<String> = _searchQuery
     private var fetchedRadars = mutableListOf<Radar>()
@@ -210,10 +202,10 @@ class MapSceneViewModel(
     fun moveCamera(mapView: MapView, selectedLocation: MutableState<Radar?>) {
         mapView.getMapAsync { googleMap ->
             if (fetchedRadars.isNotEmpty() && selectedLocation.value != null) {
-                val DEFAULT_ZOOM = 17f
+                val zoomMap = 17f
                 val locationLatLng = LatLng(selectedLocation.value!!.latitude, selectedLocation.value!!.longitude)
                 googleMap.moveCamera(
-                    CameraUpdateFactory.newLatLngZoom(locationLatLng, DEFAULT_ZOOM)
+                    CameraUpdateFactory.newLatLngZoom(locationLatLng, zoomMap)
                 )
             }
         }
@@ -250,8 +242,6 @@ class MapSceneViewModel(
             // Request location updates
             fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null)
             // fusedLocationClient.removeLocationUpdates(locationCallback)
-
-
         } else {
             // Request location permissions from the user
             val permission = Manifest.permission.ACCESS_FINE_LOCATION
@@ -266,11 +256,10 @@ class MapSceneViewModel(
     @SuppressLint("SuspiciousIndentation")
     private fun updateLocation(actualLocation: Location, googleMap: GoogleMap?) {
         val currentLatLng = LatLng(actualLocation.latitude, actualLocation.longitude)
-        val DEFAULT_ZOOM1 = 17f
+        val zoomMap = 17f
 
         // Move the camera to the current location
-        googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, DEFAULT_ZOOM1 ))
-
+        googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, zoomMap ))
 
         // Create marker options for current location
         val markerOptions = MarkerOptions()
@@ -278,8 +267,6 @@ class MapSceneViewModel(
             .title("Mi ubicación")
             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         googleMap?.addMarker(markerOptions)
-        // Remove previous current location marker
-        //_currentLocationMarker.value?.remove()
 
     }
 
@@ -310,10 +297,6 @@ class MapSceneViewModel(
             }
         }
         return mapView
-    }
-
-    fun back() {
-        navController.popBackStack()
     }
 
     fun signOut() {

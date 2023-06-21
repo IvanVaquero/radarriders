@@ -57,7 +57,7 @@ fun CrearRadarScene(viewModel: CrearRadarViewModel){
         } else {
             Toast.makeText(
                 context,
-                "Please enter limit and name",
+                "Porfavor entre el límite y el nombre",
                 Toast.LENGTH_SHORT
             ).show()
         }

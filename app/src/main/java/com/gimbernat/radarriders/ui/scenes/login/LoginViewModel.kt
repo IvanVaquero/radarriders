@@ -1,6 +1,7 @@
+@file:Suppress("unused")
+
 package com.gimbernat.radarriders.ui.scenes.login
 
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,7 +9,6 @@ import androidx.navigation.NavController
 import com.gimbernat.radarriders.AppRoutes
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -17,7 +17,6 @@ class LoginViewModel(
 ) : ViewModel() {
 
     private val _loggedIn = MutableStateFlow(false)
-    val loggedIn: StateFlow<Boolean> = _loggedIn
 
     var isLoading = mutableStateOf(false)
     val errorMessage = mutableStateOf("")

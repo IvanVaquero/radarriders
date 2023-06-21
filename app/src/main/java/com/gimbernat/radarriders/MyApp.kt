@@ -3,38 +3,17 @@
 package com.gimbernat.radarriders
 
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import com.gimbernat.radarriders.datasources.AlertDataSource
 import com.gimbernat.radarriders.datasources.RadarDataSource
-// import com.gimbernat.radarriders.datasources.CapsulesDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.ui.scenes.edituser.EditUserSceneFactory
-import com.gimbernat.radarriders.ui.scenes.edituser.EdituserScene
 import com.gimbernat.radarriders.ui.scenes.map.MapSceneFactory
-// import com.gimbernat.radarriders.ui.scenes.capsuleDetail.CapsuleDetailSceneFactory
 import com.gimbernat.radarriders.ui.scenes.login.*
-import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeScene
-import com.gimbernat.radarriders.ui.scenes.main.MainSceneFactory
-import com.gimbernat.radarriders.ui.scenes.newalerta.CrearAlertScene
 import com.gimbernat.radarriders.ui.scenes.newalerta.CrearAlertSceneFactory
 import com.gimbernat.radarriders.ui.scenes.newradar.CrearRadarSceneFactory
 import com.gimbernat.radarriders.ui.scenes.registro.RegistroSceneFactory
@@ -44,28 +23,33 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.coroutines.flow.MutableStateFlow
 
 @OptIn(ExperimentalAnimationApi::class)
 @ExperimentalMaterial3Api
 @Composable
 fun MyApp() {
     val navController = rememberAnimatedNavController()
+
+    // Conexiones BBDD
     val sessionDataSource = SessionDataSource()
     val radarDataSource = RadarDataSource(database = FirebaseDatabase.getInstance())
     val alertDataSource = AlertDataSource(database = FirebaseDatabase.getInstance())
 
-    //WelcomeScene
+    // WelcomeScene
     val welcomeSceneFactory = WelcomeSceneFactory(navController)
+
+    // Map
     val mapSceneFactory = MapSceneFactory(navController, sessionDataSource, radarDataSource)
 
+    // Login
     val loginSceneFactory =  LoginSceneFactory(navController, sessionDataSource)
-    //MainScene
-    val mainSceneFactory = MainSceneFactory(navController, sessionDataSource)
+
     //Edit User
     val edituserSceneFactory = EditUserSceneFactory(navController, sessionDataSource)
+
     //Registro
     val registroSceneFactory = RegistroSceneFactory(navController, sessionDataSource)
+
     //Add Radar
     val crearRadarSceneFactory = CrearRadarSceneFactory(
         navController,
@@ -73,21 +57,16 @@ fun MyApp() {
         radarDataSource
     )
 
+    //Add Alert
     val crearAlertSceneFactory = CrearAlertSceneFactory(
         navController,
         sessionDataSource,
         alertDataSource
     )
 
-
-
-    //Capsule Detail
-//    val capsuleDetailSceneFactory = CapsuleDetailSceneFactory(navController, capsulesDataSource)
-
     // Determine the start destination based on whether the user is logged in or not
-     val startDestination = if (sessionDataSource.isLoggedIn() ) AppRoutes.MAP.value else AppRoutes.WELCOME.value
-//    val startDestination = AppRoutes.WELCOME.value
-
+     val startDestination =
+         if (sessionDataSource.isLoggedIn() ) AppRoutes.MAP.value else AppRoutes.WELCOME.value
 
     //it uses the MyApplicationTheme to define the theme for the application.
 
@@ -154,28 +133,6 @@ fun MyApp() {
             ) {
                 crearAlertSceneFactory.create(null)
             }
-
-
-/*            composable(
-                route = AppRoutes.CAPSULE_DETAIL.value+"/{id}",
-                arguments = listOf(navArgument("id") { type = NavType.StringType }),
-                enterTransition = {
-                    slideInVertically(
-                        initialOffsetY = { height -> height },
-                        animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
-                    )
-                },
-                exitTransition = {
-                    slideOutVertically(
-                        targetOffsetY = { height -> height },
-                        animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
-                    )
-                }
-            ) {
-                //Forcing not be null, this is a bad practice
-                val id: String = it.arguments?.getString("id")!!
-                capsuleDetailSceneFactory.create(id = id)
-            }*/
         }
     }
 

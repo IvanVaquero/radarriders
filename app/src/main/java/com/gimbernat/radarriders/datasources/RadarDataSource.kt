@@ -1,4 +1,7 @@
+@file:Suppress("unused")
+
 package com.gimbernat.radarriders.datasources
+import android.util.Log
 import com.gimbernat.radarriders.datasources.interfaces.IRadarDataSource
 import com.gimbernat.radarriders.models.Radar
 import com.google.firebase.database.DataSnapshot
@@ -15,8 +18,9 @@ import kotlin.coroutines.suspendCoroutine
  * signing up, and logging out users, as well as checking the current authentication state.
  */
 class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource {
-    private var radars: List<Radar> = mutableListOf<Radar>()
+    private var radars: List<Radar> = mutableListOf()
 
+//  Test para obtener mutableList de radars para markers mapa TO-IMPROVE
     fun getAllNOW(): List<Radar> {
         val ref = database.getReference("RadarRiders").child("Radars")
         ref.addValueEventListener(object : ValueEventListener {
@@ -31,9 +35,7 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
                 }
                 radars = fetchedRadars
             }
-
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
         return radars
@@ -73,7 +75,6 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
                             fetchedRadars.add(radar)
                         }
                     }
-                    //Updating local copy
                     radars = fetchedRadars
                     continuation.resume(fetchedRadars)
                 }
@@ -91,30 +92,39 @@ class RadarDataSource(private val database: FirebaseDatabase) : IRadarDataSource
     override fun createRadar(radar: Radar): Boolean {
         return try {
             val newId = UUID.randomUUID().toString()
-            val radarsTable = database.getReference("RadarRiders").child("Radars").child(newId)
+            val radarsTable =
+                database.getReference("RadarRiders").child("Radars").child(newId)
             radarsTable.setValue(radar)
+            Log.e("createRadar_true", "Radar Created")
             true
         } catch (e: Exception) {
+            Log.e("createRadar_false", "Radar NOT Created")
             false
         }
     }
 
     override fun editRadar(uid: String, idRadar: String, radar: Radar): Boolean {
         return try {
-            val radarsTable = database.getReference("RadarRiders").child("Radars").child(uid).child(idRadar)
+            val radarsTable =
+                database.getReference("RadarRiders").child("Radars").child(idRadar)
             radarsTable.setValue(radar)
+            Log.e("editedRadar_true", "Radar Edited")
             true
         } catch (e: Exception) {
+            Log.e("editedRadar_false", "Radar NOT Edited")
             false
         }
     }
 
     override fun deleteRadar(uid: String, idRadar: String): Boolean {
         return try {
-            val radarsTable = database.getReference("RadarRiders").child("Radars").child(uid).child(idRadar)
+            val radarsTable =
+                database.getReference("RadarRiders").child("Radars").child(idRadar)
             radarsTable.removeValue()
+            Log.e("deletedRadar_true", "Radar Deleted")
             true
         } catch (e: Exception) {
+            Log.e("deletedRadar_false", "Radar NOT Deleted")
             false
         }
     }

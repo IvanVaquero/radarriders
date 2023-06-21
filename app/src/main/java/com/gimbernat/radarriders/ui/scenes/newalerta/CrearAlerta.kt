@@ -3,7 +3,6 @@ package com.gimbernat.radarriders.ui.scenes.newalerta
 import android.annotation.SuppressLint
 import android.widget.Toast
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -31,15 +30,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gimbernat.radarriders.R
-import com.gimbernat.radarriders.datasources.SessionDataSource
-
-//import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
-import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,8 +40,10 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 fun CrearAlertScene(viewModel: CrearAlertViewModel) {
     val context = LocalContext.current
+
     val titleState = remember { mutableStateOf(TextFieldValue("Titulo Alerta")) }
-    val descState = remember { mutableStateOf(TextFieldValue("descripción")) }
+    val descState = remember { mutableStateOf(TextFieldValue("Descripción")) }
+
     fun validateInputs(callback: (title: String, desc: String) -> Unit) {
         val title = titleState.value.text
         val desc = descState.value.text
@@ -98,7 +93,6 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel) {
                     .padding(bottom = 16.dp),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text
-
                 )
             )
 
@@ -109,9 +103,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 34.dp),
-                keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Text
-                )
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
             )
             Row(
                 horizontalArrangement = Arrangement.SpaceEvenly,
@@ -120,7 +112,7 @@ fun CrearAlertScene(viewModel: CrearAlertViewModel) {
                 Button(
 
                     onClick = {
-                        validateInputs() { title, desc ->
+                        validateInputs { title, desc ->
                             viewModel.createAlert(desc, title)
                         }
                     },

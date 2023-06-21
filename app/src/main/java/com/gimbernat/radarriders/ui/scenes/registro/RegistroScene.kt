@@ -1,7 +1,6 @@
 package com.gimbernat.radarriders.ui.scenes.registro
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.widget.Toast
 
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -36,27 +35,18 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
 import com.gimbernat.radarriders.R
 import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.ui.scenes.edituser.EditUserViewModel
-//import com.gimbernat.radarriders.ui.scenes.login.LoginSceneFactory
-import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
-//import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
 import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegistroScene(viewModel: RegistroViewModel){
     val context = LocalContext.current
-    val nameState = remember { mutableStateOf(TextFieldValue("Nombre")) }//Llamar usuario Base de Datos.
-    val emailState = remember { mutableStateOf(TextFieldValue("Email")) } //LLamar usuario Base de datos
+
+    val emailState = remember { mutableStateOf(TextFieldValue("Email")) }
     val passwordState = remember { mutableStateOf(TextFieldValue("Password")) }
     val confirmPasswordState = remember { mutableStateOf(TextFieldValue("Repeat Password")) }
 
@@ -151,12 +141,6 @@ fun RegistroScene(viewModel: RegistroViewModel){
 
                 Button(
                     onClick = {
-                        /*
-                        validateInputs(){ email, password ->
-                            viewModel.login(email, password)
-
-                        }
-                         */
                         viewModel.navigateToLogin()
                     },
                     modifier = Modifier.weight(1f),
@@ -190,7 +174,7 @@ fun RegistroScene(viewModel: RegistroViewModel){
 @Preview(showBackground = true)
 @Composable
 fun RegistroScenePreview() {
-    RadarRidersTheme() {
+    RadarRidersTheme {
         RegistroSceneFactory(
             navController = rememberAnimatedNavController(),
             sessionDataSource = SessionDataSource()

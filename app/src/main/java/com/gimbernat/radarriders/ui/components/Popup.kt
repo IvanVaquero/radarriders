@@ -9,6 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
+@Suppress("unused")
+
+// Use to show information for the user
 fun PopupDialog(title: String, message: String, onClose: () -> Unit) {
     AlertDialog(
         onDismissRequest = onClose,

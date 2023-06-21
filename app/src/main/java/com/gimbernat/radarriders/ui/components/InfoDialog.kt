@@ -7,7 +7,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 
 @Composable
-fun infoDialog(
+@Suppress("unused")
+
+// Use to show information for the user
+fun InfoDialog(
     title: String,
     onDismiss: () -> Unit
 ) {

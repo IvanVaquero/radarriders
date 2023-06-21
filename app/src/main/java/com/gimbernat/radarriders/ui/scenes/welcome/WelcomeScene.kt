@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -27,10 +26,8 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WelcomeScene(viewModel: WelcomeSceneViewModel) {
-    // Composable code for the first screen
 
-
-    Scaffold() { innerPadding ->
+    Scaffold { innerPadding ->
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier

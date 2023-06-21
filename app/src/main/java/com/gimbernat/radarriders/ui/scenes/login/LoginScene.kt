@@ -2,24 +2,17 @@ package com.gimbernat.radarriders.ui.scenes.login
 
 import android.annotation.SuppressLint
 import android.widget.Toast
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.*
@@ -30,13 +23,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gimbernat.radarriders.R
-import com.gimbernat.radarriders.datasources.SessionDataSource
-import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -61,9 +50,6 @@ fun LoginScene(viewModel: LoginViewModel) {
             ).show()
         }
     }
-
-    //The Scaffold composable is used to create the top-level structure of the application.
-    //It includes a TopAppBar with the application name as the title.
     Scaffold(
         topBar = {
             TopAppBar(
@@ -126,7 +112,7 @@ fun LoginScene(viewModel: LoginViewModel) {
                         viewModel.navigateToRegistro()
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
 
                 ) {
                     Text(text = "Sign Up")
@@ -136,31 +122,16 @@ fun LoginScene(viewModel: LoginViewModel) {
 
                 Button(
                     onClick = {
-
-                        validateInputs(){ email, password ->
+                        validateInputs{ email, password ->
                             viewModel.login(email, password)
-
                         }
-
                     },
                     modifier = Modifier.weight(1f),
-        //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Login")
                 }
             }
         }
-    }
-}
-
-@OptIn(ExperimentalAnimationApi::class)
-@Preview(showBackground = true)
-@Composable
-fun LoginScenePreview() {
-    RadarRidersTheme() {
-        LoginSceneFactory(
-            navController = rememberAnimatedNavController(),
-            sessionDataSource = SessionDataSource()
-        )
     }
 }

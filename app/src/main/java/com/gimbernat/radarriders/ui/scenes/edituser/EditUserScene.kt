@@ -1,10 +1,8 @@
 package com.gimbernat.radarriders.ui.scenes.edituser
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.widget.Toast
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,37 +28,25 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
 import com.gimbernat.radarriders.R
 import com.gimbernat.radarriders.datasources.SessionDataSource
-//import com.gimbernat.radarriders.ui.scenes.login.LoginSceneFactory
-import com.gimbernat.radarriders.ui.scenes.welcome.WelcomeSceneFactory
-//import com.gimbernat.radarriders.ui.theme.MyApplicationTheme
-import com.gimbernat.radarriders.ui.theme.RadarRidersTheme
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSource) {
+fun EditUserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSource) {
     val context = LocalContext.current
+
     val message by viewModel.message.observeAsState()
     message?.let {
         Toast.makeText(context, it, Toast.LENGTH_LONG).show()
     }
-//    val nameState = remember { mutableStateOf(TextFieldValue("Marc")) }//Llamar usuario Base de Datos.
+
     val emailState = remember { mutableStateOf(TextFieldValue("")) } //LLamar usuario Base de datos
     val oldEmailState = remember { mutableStateOf(TextFieldValue("")) }
-//    val passwordState = remember { mutableStateOf(TextFieldValue("#HyperMegaPassword1234.")) } //LLamar usuario Base de
 
     LaunchedEffect(Unit) {
         val currentUser = sessionDataSource.getCurrentUser()
@@ -70,16 +56,13 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
     }
 
     fun validateInputs(callback: (email: String) -> Unit) {
-//        val name = nameState.value.text
         val email = emailState.value.text
-//        val password = passwordState.value.text
-//        if (name.isNotEmpty() && email.isNotEmpty()  && password.isNotEmpty()) {
         if (email.isNotEmpty()) {
             callback(email)
         } else {
             Toast.makeText(
                 context,
-                "Email can't be void.",
+                "Email no puede ser vacio.",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -108,22 +91,6 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            //    if (viewModel.errorMessage.value.isNotEmpty()) {
-            //        Text(text = viewModel.errorMessage.value, color = Color.Red)
-            //    }
-//            OutlinedTextField(
-//                value = nameState.value,
-//                onValueChange = { nameState.value = it },
-//                label = { Text("Name") },
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .padding(bottom = 16.dp),
-//                keyboardOptions = KeyboardOptions(
-//                    keyboardType = KeyboardType.Text
-//
-//                )
-//            )
-
             OutlinedTextField(
                 value = oldEmailState.value,
                 onValueChange = { },
@@ -145,18 +112,6 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                     keyboardType = KeyboardType.Email
                 )
             )
-//            OutlinedTextField(
-//                value = passwordState.value,
-//                onValueChange = { passwordState.value = it },
-//                label = { Text("Password") },
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .padding(bottom = 16.dp),
-//                keyboardOptions = KeyboardOptions(
-//                    keyboardType = KeyboardType.Password
-//                ),
-//                visualTransformation = PasswordVisualTransformation()
-//            )
 
             Row(horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
@@ -167,7 +122,7 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                         viewModel.navigateToMain()
                     },
                     modifier = Modifier.weight(1f),
-                    //            enabled = !viewModel.isLoading.value
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Go back")
                 }
@@ -175,30 +130,16 @@ fun EdituserScene(viewModel: EditUserViewModel, sessionDataSource: SessionDataSo
                 Spacer(modifier = Modifier.width(16.dp))
 
                 Button(
-
                     onClick = {
-                        validateInputs(){email ->
+                        validateInputs { email ->
                             viewModel.updateEmail(email)                        }
                     },
                     modifier = Modifier.weight(1f),
-                    // enabled = !viewModel.isLoading.value
-
+                    enabled = !viewModel.isLoading.value
                 ) {
                     Text(text = "Save")
                 }
             }
         }
-    }
-}
-
-@OptIn(ExperimentalAnimationApi::class)
-@Preview(showBackground = true)
-@Composable
-fun EditUserScenePreview() {
-    RadarRidersTheme() {
-        EditUserSceneFactory(
-            navController = rememberAnimatedNavController(),
-            sessionDataSource = SessionDataSource()
-        )
     }
 }

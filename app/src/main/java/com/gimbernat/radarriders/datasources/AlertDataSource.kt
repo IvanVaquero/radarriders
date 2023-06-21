@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.gimbernat.radarriders.datasources
 import android.util.Log
 import com.gimbernat.radarriders.datasources.interfaces.IAlertDataSource
@@ -16,8 +18,9 @@ import kotlin.coroutines.suspendCoroutine
  * signing up, and logging out users, as well as checking the current authentication state.
  */
 class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource {
-    private var alerts: List<Alert> = mutableListOf<Alert>()
+    private var alerts: List<Alert> = mutableListOf()
 
+//  Obtenemos todas las alertas de Firebase TO-IMPROVE
     fun getAll(callback: (List<Alert>) -> Unit)  {
         val ref = database.getReference("RadarRiders").child("Alerts")
         ref.addValueEventListener(object : ValueEventListener {
@@ -52,7 +55,6 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
                             fetchedAlerts.add(alert)
                         }
                     }
-                    //Updating local copy
                     alerts = fetchedAlerts
                     continuation.resume(fetchedAlerts)
                 }
@@ -70,10 +72,13 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
     override fun createAlert(alert: Alert): Boolean {
         return try {
             val newId = UUID.randomUUID().toString()
-            val alertsTable = database.getReference("RadarRiders").child("Alerts").child(newId)
+            val alertsTable =
+                database.getReference("RadarRiders").child("Alerts").child(newId)
             alertsTable.setValue(alert)
+            Log.e("createAlert_true", "Alert Created")
             true
         } catch (e: Exception) {
+            Log.e("createAlert_false", "Alert NOT Created")
             false
         }
     }
@@ -82,18 +87,22 @@ class AlertDataSource(private val database: FirebaseDatabase) : IAlertDataSource
         return try {
             val alertsTable = database.getReference("Alerts").child(uid)
             alertsTable.setValue(alert)
+            Log.e("editedAlert_true", "Alert Edited")
             true
         } catch (e: Exception) {
+            Log.e("editedAlert_false", "Alert NOT Edited")
             false
         }
     }
 
     override fun deleteAlert(uid: String, idAlert: String): Boolean {
         return try {
-            val alertsTable = database.getReference("Alerts").child(uid).child(idAlert)
+            val alertsTable = database.getReference("Alerts").child(idAlert)
             alertsTable.removeValue()
+            Log.e("deletedAlert_true", "Alert Deleted")
             true
         } catch (e: Exception) {
+            Log.e("deletedAlert_false", "Alert NOT Deleted")
             false
         }
     }

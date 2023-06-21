@@ -4,29 +4,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.gimbernat.radarriders.AppRoutes
-import com.gimbernat.radarriders.datasources.SessionDataSource
 import kotlinx.coroutines.launch
 
 class WelcomeSceneViewModel(private val navController: NavController) : ViewModel() {
-        fun navigateToLogin(){
-            viewModelScope.launch {
-                navController.navigate(AppRoutes.LOGIN.value) {
-                    popUpTo(AppRoutes.WELCOME.value) {
-                        inclusive = true
-                    }
-                }
-            }
-        }
-
-/*
-    fun navigateToMain() {
+    fun navigateToLogin(){
         viewModelScope.launch {
-            navController.navigate(AppRoutes.MAIN.value) {
+            navController.navigate(AppRoutes.LOGIN.value) {
                 popUpTo(AppRoutes.WELCOME.value) {
                     inclusive = true
                 }
             }
         }
     }
-    */
 }

@@ -1,5 +1,4 @@
 package com.gimbernat.radarriders.ui.scenes.newradar
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,15 +7,15 @@ import com.gimbernat.radarriders.AppRoutes
 import com.gimbernat.radarriders.datasources.RadarDataSource
 import com.gimbernat.radarriders.datasources.SessionDataSource
 import com.gimbernat.radarriders.models.Radar
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 class CrearRadarViewModel (
+
     private val navController: NavController,
     private val sessionDataSource: SessionDataSource,
     private val radarDataSource: RadarDataSource
 
     ) : ViewModel() {
+
         var isLoading = mutableStateOf(false)
         val errorMessage = mutableStateOf("")
 
@@ -34,13 +33,13 @@ class CrearRadarViewModel (
                 try {
                     isLoading.value = false
                     if (!radarDataSource.createRadar(newRadar)) {
-                        errorMessage.value = "Error creating radar"
+                        errorMessage.value = "Error al crear radar"
                     } else {
                         goBack()
                     }
                 } catch (e: Exception) {
                     isLoading.value = false
-                    errorMessage.value = "Error creating radar: ${e.message}"
+                    errorMessage.value = "Error creando radar: ${e.message}"
                 }
                 isLoading.value = false
             }

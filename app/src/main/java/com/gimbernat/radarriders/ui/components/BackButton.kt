@@ -6,6 +6,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 
+@Suppress("unused")
 @Composable
 fun BackButton(onItemClick: () -> Unit){
     IconButton(onClick = onItemClick) {
